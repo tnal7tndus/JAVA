@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>** index **</title>
+</head>
+<body>
+	<h2>** Dynamic Web Project **</h2>
+	<h2>안녕하세요 ~~~ 수미's WEB !!</h2>
+	<!--
+	<form action="getpost" method="get">
+		<input type="text" name="id" value="banana"> &nbsp;
+		<input type="text" name="id" value="바나나">
+		<input type="sumit" value="Test">
+	 </form>
+	 <hr>
+	 -->
+	 
+	<form action="getpost" method="post">
+		<input type="text" name="id" value="banana"> &nbsp;
+		<input type="text" name="name" value="바나나">
+		<input type="submit" value="Test">
+	 </form>
+	 <hr>
+
+	<!-- Get방식 -->
+	<!-- <form action="hello" method="get">
+		<input type="text" name="id"> <input type="submit"value="Test">
+	<form action="#"><input type="submit" value="학생 조회"></input></form>
+	-->
+
+	<!-- Post방식 -->
+	<!-- <form action="hello"method="post">
+	<input type="text" name="id">
+	<input type="submit" value="Test">
+	</form>-->
+	<hr>
+	<!-- ** 경로표기
+		=> 절대경로 : / 로 시작, 프로젝트명부터 전체경로표기
+			->		/ web01 / images / letsgo.png
+			->		webapp 폴더는 생략 됨	
+		=> 상대경로 : 현재위치에서 시작, / 로시작하면 안됨
+			-> ./ : 현재위치, ../1단계 상위
+			-> "./images/letsgo.png" =동일= "images/letsgo.png"
+	 -->
+	<img alt="" src="images/letsgo.png" width="300" height="200">
+	<hr>
+	&nbsp;<a href="/web01/servletTestForm/flowEx04_LoginForm.jsp">LoginForm </a>&nbsp;
+	&nbsp;<a href="/web01/logout"> Logout </a>&nbsp;<br>
+	&nbsp;<a href="/web01/hello"> HelloS </a>&nbsp;
+	&nbsp;<a href="/web01/list"> M01ListS </a>&nbsp;
+	&nbsp;<a href="/web01/life"> LifeCycle </a><br>
+	&nbsp;<a href="/web01/servletTestForm/form01_Adder.html"> Adder </a>&nbsp;
+	&nbsp;<a href="/web01/servletTestForm/form02_Radio.jsp"> Radio </a>&nbsp;
+	&nbsp;<a href="/web01/servletTestForm/form03_Check.jsp"> Check </a>&nbsp;
+	&nbsp;<a href="/web01/servletTestForm/form04_Select.jsp"> Select </a><br>
+	&nbsp;<a href="/web01/flow01"> Flow01 </a>&nbsp;
+	&nbsp;<a href="/web01/sessioni"> SessionI </a><br>
+	&nbsp;<a href="/web01/jsp01/ex01_HelloJsp.jsp">HelloJ </a>&nbsp;
+	&nbsp;<a href="/web01/jsp01/ex02_mvc01List.jsp">M01ListJ </a>&nbsp;
+	
+	
+	
+</body>
+</html>
