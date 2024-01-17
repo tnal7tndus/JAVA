@@ -22,14 +22,14 @@
 <hr>
 -> 2.1) JSP Action Tag <br>
 Jsp 문서의 완성된 웹페이지가 포함됨, 변수공유 불가능 (코드호환이 안됨)<br>
-<%-- <jsp:include page="ex01_HelloJsp.jsp" /> --%>
+<jsp:include page="ex01_HelloJsp.jsp" />
 <%-- => 변수공유 확인: name=<%=name--%> -> 컴파일오류 --%>
 
 
 -> 2.2) Directive include Test <br>
 Jsp 문서의 소스코드가 포함됨, 변수공유 가능 (코드호환이 됨)<br>
 <%@ include file="ex01_HelloJsp.jsp" %>
-<hr>
+
 => 변수공유 확인: name=<%=name%>
 <hr>
 </body>

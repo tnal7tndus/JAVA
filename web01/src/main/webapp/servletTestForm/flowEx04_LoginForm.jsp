@@ -33,9 +33,7 @@
 
 	** JSTL 적용하기 --%>
 <c:if test="${not empty requestScope.message}">
-=> ${requestScope.message}<br>
+${requestScope.message}<br>
 </c:if>	
---
-	
 </body>
 </html>

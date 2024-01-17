@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,13 +35,64 @@
            step 을 지정하지 않으면 1씩 증가     
 </pre>
 => 결과1: step=1 <br>
-
-
+<table border="1" style="text-align:center; width:90%;">
+	<tr><th>짝수</th><th>index</th><th>count</th></tr>
+	<c:forEach var="i" begin="1" end="10" step="1" varStatus="vs">
+		<c:if test="${i%2==0}">
+			<tr><td>${i}</td><td>${vs.index}</td><td>${vs.count}</td></tr>
+		</c:if>
+	</c:forEach>
+</table>
 => 결과2: step=2 <br>
+<table border="1" style="text-align:center; width:90%;">
+	<tr><th>짝수</th><th>index</th><th>count</th></tr>
+	
+	<c:forEach var="i" begin="2" end="10" step="2" varStatus="vs">
+		<c:if test="${i%2==0}">
+			<tr><td>${i}</td><td>${vs.index}</td><td>${vs.count}</td></tr>
+		</c:if>
+	</c:forEach>
+</table>
+=> 실습 3) 1~30 을 다음처럼 1행에 5개씩 출력하세요~<br>
+<!-- 
+1,2,3,4,5
+6,7,8,9,10
+11,12,13,14,15
+...
+............30 -->
+<%
+	for (int i = 1 ; i < 26 ; ){
+		for (int j =i ; j < i+5 ; j++){
+			System.out.print(j);
+		}
+		System.out.println();
+		i+=5;
+	}
+%>
 
+<c:forEach var="i" begin="1" end="30" step="5" varStatus="vs"><br>
+		${i},
+	<c:forEach var="j" begin="${i+1}" end="${i+4}" step="1" varStatus="v">
+		<c:choose >
+		<c:when test="${j%5==0}">
+			${j} 
+		</c:when>
+		<c:otherwise>
+			${j},
+		</c:otherwise>
+		</c:choose>
+	</c:forEach>
+</c:forEach>
 
+<%-- 승현오빠 코드
+<c:forEach var="i" begin="1" end="30" step="5">
+   <c:forEach var=j begin="1" end="5" step="1" varStatus="v">
+         ${i + j -1}
+         ${j % 5 == 0 ? "<br>" : ", " }
+   </c:forEach>
+</c:forEach>
+ --%>
 
 </b>
-
 </body>
 </html>

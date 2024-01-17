@@ -5,12 +5,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>** MVC02_List_Java **</title>
+<title>** MVC02_List_Java_Scriptlet **</title>
 </head>
 <body>
 <%
 	List<StudentDTO> list = (List<StudentDTO>)request.getAttribute("myList");
-
 %>
 <h2>** MVC02_List Java_Scriptlet</h2>
 <table border="1" style="width:100%">
@@ -30,6 +29,7 @@
 <% 	}
 
 %>
+</table>
 
 
 

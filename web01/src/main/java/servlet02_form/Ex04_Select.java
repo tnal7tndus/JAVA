@@ -29,7 +29,7 @@ public class Ex04_Select extends HttpServlet {
 		String[] interest = request.getParameterValues("interest");
 		
 		//2) Service
-		//3) View 처리 : 연산결고 ㅏ출력
+		//3) View 처리 : 연산결과 출력
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
 		out.print("<h2>** Select Test **</h2>");

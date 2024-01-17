@@ -51,6 +51,7 @@ public class Ex04_Login extends HttpServlet {
 			uri = "home.jsp";
 			HttpSession session = request.getSession();
 			session.setAttribute("loginName", dto.getName());
+			session.setAttribute("loginSno", dto.getSno());
 //			session.setAttribute("StudentDTO", dto);
 			System.out.println("** 로그인성공 **");
 			System.out.println("** 로그인 Student =>" + dto);

@@ -95,7 +95,7 @@
  
 <c:choose>
 	<c:when test="${sessionScope.loginName!=null}">
-		&nbsp;<a href="#">MyInfo</a>&nbsp;
+		&nbsp;<a href="/web01/myinfo">MyInfo</a>&nbsp;
 		&nbsp;<a href="/web01/logout"> Logout </a>&nbsp;<br>
 	</c:when>
 	<c:otherwise>
