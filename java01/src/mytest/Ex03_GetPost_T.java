@@ -1,4 +1,4 @@
-package servlet01;
+package mytest;
 
 import java.io.IOException;
 import java.io.PrintWriter;

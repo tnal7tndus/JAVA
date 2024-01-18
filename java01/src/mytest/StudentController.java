@@ -1,4 +1,4 @@
-package jdbc02;
+package mytest;
 
 import java.util.List;
 
