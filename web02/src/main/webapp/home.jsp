@@ -9,10 +9,10 @@
 </head>
 <body>
 <h2> Web02_MVC02 </h2>
-<c:if test="${!empty sessionScope.loginName}">
-    <h3>${sessionScope.loginName}님 안녕하세요.</h3>
+<c:if test="${!empty sessionScope.mName}">
+    <h3>${sessionScope.mName}님 안녕하세요.</h3>
 </c:if>
-<c:if test="${empty sessionScope.loginName}">
+<c:if test="${empty sessionScope.mName}">
     <h3>로그인 후 이용해주세요.</h3>
 </c:if>
 <hr>
@@ -37,14 +37,23 @@
 --> 
 <img alt="" src="/web02/images/white01.gif" width="300" height="200">
 <hr>
-<c:if test="${!empty sessionScope.loginName}">
+<c:if test="${!empty sessionScope.mName}">
     &nbsp;<a href ="/web02/mdetail">MyInfo</a>&nbsp;
+    &nbsp;<a href ="/web02/mdetail?jCode=U">내정보수정</a>&nbsp;
     &nbsp;<a href ="/web02/logout">Logout</a><br>
+    &nbsp;<a href ="/web02/member/mdelete.jsp">회원탈퇴</a><br>
 </c:if>
-<c:if test="${empty sessionScope.loginName}">
+<c:if test="${empty sessionScope.mName}">
     &nbsp;<a href ="/web02/member/loginForm.jsp">Login</a>&nbsp;
     &nbsp;<a href ="/web02/member/joinForm.jsp">Join</a><br>
 </c:if>
+<c:if test="${!empty requestScope.message}">
+	${requestScope.message}<br>
+</c:if>
+<c:if test="${!empty requestScope.dMessage}">
+	${requestScope.dMessage}<br>
+</c:if>
+
 
 &nbsp;<a href ="/web02/mlist">M02List</a>&nbsp;
 </body>

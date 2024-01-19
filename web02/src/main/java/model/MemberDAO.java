@@ -110,7 +110,7 @@ public class MemberDAO {
 	// ** update
 	// => id(P.Key) 제외한 모든컬럼 수정
 	public int update(MemberDTO dto) {
-		sql = "update member set password=?, name=?, age=?, jon=?, info=?"
+		sql = "update member set password=?, name=?, age=?, jno=?, info=?"
 				+ ",point=?, birthday=?, rid=? where id=?";
 		try {
 			pst = cn.prepareStatement(sql);
