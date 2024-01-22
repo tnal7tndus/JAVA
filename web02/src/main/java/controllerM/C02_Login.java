@@ -37,14 +37,13 @@ public class C02_Login extends HttpServlet {
 		MemberService ms = new MemberService();
 		MemberDTO dto = ms.selectOne(id);
 		if (dto != null && password.equals(dto.getPassword())) {
-			request.getSession().setAttribute("mId", dto.getId());
+			request.getSession().setAttribute("loginID", dto.getId());
 			request.getSession().setAttribute("mName", dto.getName());
 			request.getSession().setAttribute("mPassword", dto.getPassword());
 			// forward 방식
 //				request.getRequestDispatcher("home.jsp").forward(request, response);
 			// redirect 방식
 			response.sendRedirect("home.jsp");
-			
 		}else {
 			request.setAttribute("message", "로그인 실패! 다시 로그인해주세요"); //forward로 처리해야 나오는 문구
 			response.sendRedirect("/web02/member/loginForm.jsp");

@@ -44,7 +44,7 @@ public class C06_mDelete extends HttpServlet {
 			request.getRequestDispatcher("member/mdelete.jsp").forward(request, response);
 		}
 	}
-	
+
 	// 3. View(Response) : Forward
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -52,3 +52,32 @@ public class C06_mDelete extends HttpServlet {
 	}//doPost
 
 }//class
+
+
+//민지언니 코드
+//protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//    MemberService sc = new MemberService();
+//    MemberDTO dto = sc.selectOne((String)request.getSession().getAttribute("mId"));
+//
+////    System.out.println(request.getParameter("password"));
+//    System.out.println(dto);
+//    System.out.println(request.getParameter("password"));
+//
+//    if(request.getParameter("password").equals(dto.getPassword())) {
+//        System.out.println("탈퇴완료");
+//        request.getSession().invalidate();
+//        request.setAttribute("message", "회원 탈퇴 완료");
+//        request.getRequestDispatcher("home.jsp").forward(request, response);
+//    } else {
+//        System.out.println("탈퇴실패");
+//        request.setAttribute("message", "비번을 다시 확인하세욬ㅋ");
+//        request.getRequestDispatcher("/member/deleteForm.jsp").forward(request, response);
+//    }
+//}
+//
+//
+//protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//    doGet(request, response);
+//}
+//
+//}

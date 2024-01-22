@@ -26,7 +26,7 @@ public class C03_mDetail extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// 1. 요청분석
 	    // => id 처리, session에서 getAttribute
-		String id = (String)request.getSession().getAttribute("mId");
+		String id = (String)request.getSession().getAttribute("loginID");
 		String uri="member/memberDetail.jsp"; //성공시
 		// => Update 요청 시에는 updateForm.jsp로 이동
 		if ("U".equals(request.getParameter("jCode"))){
@@ -37,7 +37,7 @@ public class C03_mDetail extends HttpServlet {
 	    // => Service, DTO 객체 생성
 		// => 결과를 View가 출력 가능 하도록 Attribute에 저장
 		MemberService service = new MemberService();
-		request.setAttribute("detail", service.selectOne(id));
+		request.setAttribute("apple", service.selectOne(id));
 		
 	    // 3. View (Response) : Forward
 		request.getRequestDispatcher(uri).forward(request, response);
