@@ -44,7 +44,6 @@ public class MyDispatcher extends HttpServlet {
 		MyController controller = hmappings.getController(uri);
 		System.out.println("** uri = >"+uri);
 		if(controller!=null) {
-			
 			uri=controller.handleRequest(request,response);
 		}else {
 			uri="home";
