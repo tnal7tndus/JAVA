@@ -24,7 +24,7 @@ import org.springframework.context.annotation.ImportResource;
 @Configuration
 public class JavaConfig03 {
 	//1) 고전적 방법 (직접 new : 소스 재컴파일)
-	//=> xml 병행 Test
+	//=> xml 병행 Test!!!!!
 	
 	//2) IOC/DI -> 생성자 주입
 	//=> SpeakerB를 xml로 생성 시, 전달 불가능
