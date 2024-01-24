@@ -8,6 +8,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+
 import domain.MemberDTO;
 
 //** DAO(Data Access Object)
@@ -15,6 +17,7 @@ import domain.MemberDTO;
 //=> CRUD 구현 
 //    Create(Insert), Read(selectList, selectOne), Update, Delete
 
+@Component
 public class MemberDAO {
 	// ** 전역변수 정의 //인터페이스(interface)
 	private static Connection cn = DBConnection.getConnection(); // CehckedException으로 try~catch 해줘야함. 익셉션 처리 해주지 않으면
