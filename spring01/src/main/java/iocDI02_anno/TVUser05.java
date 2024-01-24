@@ -51,7 +51,7 @@ class SsTVi implements TV{
 	public void powerOff() {System.out.println("~~ SsTvi powerOn ~~");}
 }
 
-@Component("tv")
+//@Component("ltv")
 class LgTVi implements TV{
 	public LgTVi() { System.out.println("~~ LgTVi 기본생성자 ~~"); }
 	@Override
