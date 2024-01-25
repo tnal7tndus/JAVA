@@ -23,17 +23,6 @@
 <hr>
 <!-- <img alt="" src="resources/images/white01.gif" width="300" height="200">  -->
 
-<c:if test="${!empty sessionScope.mName}">
-    &nbsp;<a href ="/web02/mdetail">MyInfo</a>&nbsp;
-    &nbsp;<a href ="/web02/mdetail?jCode=U">내정보수정</a>&nbsp;
-    &nbsp;<a href ="/web02/logout">Logout</a><br>
-    &nbsp;<a href ="/web02/member/mdelete.jsp">회원탈퇴</a><br>
-</c:if>
-<c:if test="${empty sessionScope.mName}">
-    &nbsp;<a href ="/web02/member/loginForm.jsp">Login</a>&nbsp;
-    &nbsp;<a href ="/web02/member/joinForm.jsp">Join</a><br>
-</c:if>
-
 
 &nbsp;<a href ="mlist">MList</a>&nbsp;
 &nbsp;<a href ="mdetail">MDetail</a>&nbsp;

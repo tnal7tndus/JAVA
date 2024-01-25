@@ -1,7 +1,5 @@
 package domain;
 
-import java.sql.Connection;
-
 //** DTO
 //=> private 맴버변수
 //=> getter/setter
@@ -11,7 +9,7 @@ public class MemberDTO {
 	
 	//1) private 멤버변수
 	private String id; //primary_Key
-	private String password; // not, null
+	private String password; // not null
 	private String name;
 	private int age;
 	private int jno;

@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>** LoginForm **</title>
+<title>** Web MCV2 LoginForm **</title>
 </head>
 <body>
 <h2>** Web MCV2 LoginForm **</h2>

@@ -4,12 +4,16 @@ package domain;
 //=> JoDTO 작성, joinList() 메서드작성( Controller, service, DAO )
 
 public class JoDTO {
+	//** private으로 멤버변수 정의
 	private int jno;
 	private String jname;
 	private String captain;
 	private String project;
 	private String slogan;
 
+	
+	//** 1) 생성자
+	//=> default 생성자, 모든 값을 초기화하는 생성자
 	public JoDTO() {
 	};
 
@@ -20,7 +24,8 @@ public class JoDTO {
 		this.project = project;
 		this.slogan = slogan;
 	}
-
+	
+	//** 2) setter/getter
 	public int getJno() {
 		return jno;
 	}
@@ -61,6 +66,7 @@ public class JoDTO {
 		this.slogan = slogan;
 	}
 
+	//** 3) toString
 	@Override
 	public String toString() {
 		return "JoDTO [jno=" + jno + ", jname=" + jname + ", captain=" + captain + ", project=" + project + ", slogan="
