@@ -31,8 +31,8 @@
 </c:if>
 </table>
 <hr>
-&nbsp;<a href="/web02/home.jsp">Home</a>&nbsp;
-&nbsp;<a href="">이전으로</a>&nbsp;
+&nbsp;<a href="javascript:history.go(-1)">이전으로</a>&nbsp;
+&nbsp;<a href="home">HOME</a>&nbsp;
 
 
 </body>
