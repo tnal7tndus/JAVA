@@ -14,13 +14,14 @@
 	${sessionScope.loginName}님 안녕하세요 ~~<br>
 </c:if>
 
-<c:if test="${empty sessionScope.loginID}">
-	로그인 후 이용하세요 ~~<br>
-</c:if>
-
 <c:if test="${!empty requestScope.message}">
 	<hr>=> ${requestScope.message}<br>
 </c:if>
+
+<c:if test="${empty sessionScope.loginID && empty requestScope.message}">
+	로그인 후 이용하세요 ~~<br>
+</c:if>
+
 <hr>
 <img alt="mainImage" src="/spring02/resources/images/tulips.png" width="300" height="200">
 <hr>
@@ -40,5 +41,6 @@
 </c:if>
 <br><hr>
 &nbsp;<a href ="member/memberList">MList</a>&nbsp;
+&nbsp;<a href ="jo/joList">JList</a>&nbsp;
 </body>
 </html>
