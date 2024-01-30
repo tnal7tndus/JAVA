@@ -17,7 +17,7 @@
 		<th>title</th>
 		<th>content</th>
 		<th>regdate</th>
-		<th>조회수</th>
+		<th>조회수!</th>
 	</tr>
 	<c:if test="${!empty sessionScope.loginID }">
 		<c:forEach items="${ requestScope.apple}" var="list">
