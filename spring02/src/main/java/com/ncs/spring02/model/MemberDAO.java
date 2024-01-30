@@ -148,4 +148,38 @@ public class MemberDAO {
 		}
 	} // delete
 	
+	//selectJoList
+	public List<MemberDTO> selectJoList(String jno) { // static 생략
+		sql = "select * from member where jno="+jno;
+		
+		List<MemberDTO> list = new ArrayList<MemberDTO>(); // 제네릭
+		try {
+			pst = cn.prepareStatement(sql);
+			rs = pst.executeQuery(); // select쿼리를 실행
+			// => 결과의 존재 여부
+			if (rs.next()) {
+				do {
+//					=> setter 사용
+					MemberDTO dto = new MemberDTO();
+					dto.setId(rs.getString(1));
+					dto.setPassword(rs.getString(2));
+					dto.setName(rs.getString(3));
+					dto.setAge(rs.getInt(4));
+					dto.setJno(rs.getInt(5));
+					dto.setInfo(rs.getString(6));
+					dto.setPoint(rs.getDouble(7));
+					dto.setBirthday(rs.getString(8));
+					dto.setRid(rs.getString(9));
+					list.add(dto);
+				} while (rs.next());
+				return list;
+			} else {
+				return null;
+			}
+		} catch (Exception e) {
+			System.out.println("**selectList Exception => " + e.toString());
+			return null;
+		}
+	}
+	
 } // class

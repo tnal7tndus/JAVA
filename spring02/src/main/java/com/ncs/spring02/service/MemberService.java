@@ -2,6 +2,8 @@ package com.ncs.spring02.service;
 
 import java.util.List;
 
+import javax.print.attribute.standard.DateTimeAtProcessing;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -36,6 +38,11 @@ public class MemberService {
 	//** delete
 	public int delete(String id) {
 		return dao.delete(id);
+	}
+	
+	//** selectJoList
+	public List<MemberDTO> selectJoList(String jno) {
+		return dao.selectJoList(jno);
 	}
 
 }//class

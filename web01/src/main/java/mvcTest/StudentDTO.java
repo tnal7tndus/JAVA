@@ -137,7 +137,6 @@ public class StudentDTO extends JoDTO {
 		this.cname = cname;
 	}
 	
-	
 	@Override
 	public String toString() {
 		return "StudentDTO [sno=" + sno + ", name=" + name + ", age=" + age 

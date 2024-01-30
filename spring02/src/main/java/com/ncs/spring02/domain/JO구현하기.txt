@@ -4,3 +4,12 @@
 => Jsp: joList.jsp, joDetail.jsp, joInsert.jsp, joUpdate.jsp
 => home: 메뉴
 => joList에서 번호를 누르면 joDetail 출력하기
+
+** 기능 추가
+=> joDetail에 조원 목록 출력하기 추가
+	-> JoController의 detail 메서드에 기능 추가
+		- 조원 목록 읽어오기
+		- MemberDAO, Service에 selectJoList 추가
+	-> joDetail.jsp에 출력구문 추가
+	
+	
