@@ -21,6 +21,22 @@
 	</c:if>
 </table>
 
+<hr>
+
+
+<table border= "1" sytle="width:100%">
+	<tr height ="20" bgcolor="yellow">
+		<th>ID</th><th>Password</th><th>Name</th><th>Age</th>
+		<th>Jno</th><th>Info</th><th>Point</th><th>Birthday</th><th>Rid</th>
+	</tr>
+	<c:if test="${!empty requstScope.apple}">
+		<c:set var="s" value="${requestScope.apple}"/>
+		<tr><td>${s.id}</td><td>${s.password}</td><td>${s.name}</td><td>${s.age}</td><td>${s.jno}</td>
+		<td>${s.info}</td><td>${s.point}</td><td>${s.birhday}</td><td>${s.rid}</td></tr>
+	</c:if>
+	
+</table>
+
 <c:if test="${!empty requestScope.message}">
 => ${requestScope.message}
 </c:if>

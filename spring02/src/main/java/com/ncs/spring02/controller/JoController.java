@@ -13,12 +13,18 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.ncs.spring02.domain.JoDTO;
 import com.ncs.spring02.service.JoService;
 
+import lombok.AllArgsConstructor;
+
 
 @Controller
 @RequestMapping(value = "/jo")
+//@AllArgsConstructor //모든 멤버변수를 초기화하는 생성자 자동 추가 & 사용
+					//그러므로 아래의 @Autowired는 생략 가능
 public class JoController {
 	@Autowired(required = false)
-	JoService service;
+	JoService service;  // =new JoService();
+//	@Autowired
+//	MemberSerivce mservice;
 	String uri;
 	
 	@RequestMapping(value = "/joInsert" ,method=RequestMethod.GET)
@@ -36,19 +42,29 @@ public class JoController {
 		model.addAttribute("apple", service.selectJoList());
 	}
 	
+	
 	@RequestMapping(value = "/joDetail", method = RequestMethod.GET)
 	public void joDetail( Model model, @RequestParam("jno")String jCode) {
 		model.addAttribute("apple", service.selectJoDetail(jCode));
+//	String uri = "jo/joDetail";
+//	model.addAllAttributes("apple", service.selectOne(dto));
+//	if("U".equals(jCode))
+//		uri="jo/joUpdate";
+//	if(("D".equals(jCode)))
+//		model.addAllAttributes("banana", mservice.selectJoList(dto.getJno));
+//		return uri;
+//	
 	}
 	
+	
+	
+	
 	//**insert
-	@RequestMapping(value = "/Insert", method = RequestMethod.POST)
+	@RequestMapping(value = "/Insert", method = RequestMethod.GET)
 	public String insert(Model model, JoDTO dto) {
 		
 		uri = "jo/joList";
-		
-		
-		
+				
 		if(service.insert(dto) > 0) {
 			model.addAttribute("apple", service.selectJoList());
 			model.addAttribute("message", "조 등록 성공!!");
@@ -58,7 +74,6 @@ public class JoController {
 		}
 		return uri;
 	}
-	
 	
 	//**update
 	@RequestMapping(value = "/Update", method = RequestMethod.GET)
