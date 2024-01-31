@@ -53,8 +53,7 @@ public class BoardDAO {
 			System.out.println("selectList Error : => " + e.toString());
 			return null;
 		}
-		
-	}
+	}//selectList
 
 	// Detail
 	public BoardDTO selectOne(int seq) {
@@ -78,13 +77,12 @@ public class BoardDAO {
 			} else {
 				System.out.println("** selectOne : 출력 자료 없음");
 				return null;
-			}
-			
+			}//if
 		} catch (Exception e) {
 			System.out.println("** selectOne Exception => "+ e.toString());
 			return null;
-		}
-	}
+		}//try
+	}//selectOne
 
 	// Insert : 원글 입력
     // => 입력 컬럼: id, title, content 
@@ -105,7 +103,7 @@ public class BoardDAO {
 			System.out.println("** insert Exception =>"+ e.toString());
 			return 0;
 		}
-	}
+	}//insert
 	
 	//replyInsert : 답글 입력
 	//=> seq: IFNULL 이용
@@ -132,7 +130,6 @@ public class BoardDAO {
 			pst.setInt(6, dto.getIndent());
 			pst.executeUpdate();	//답글 등록 성공-> stepUpdate
 			System.out.println("**stepUpdate Count => " + stepUpdate(dto));
-			
 			return 1;
 		} catch (Exception e) {
 			System.out.println("** ReplyInsert Exception =>"+ e.toString());
@@ -174,18 +171,28 @@ public class BoardDAO {
 			System.out.println("** insert Exception =>"+ e.toString());
 			return 0;
 		}
-	}
+	}//update
 
 	// Delete
-	public int delete(int seq) {
-		sql = "Delete From board Where seq =" + seq;
+	//=> seq로 삭제
+	//=> 답글 추가 후 : 원글과 답글 구분
+	//	-> 원글 : ~ where root=? (모든 답글도 동시에 삭제)
+	//	-> 답글 : ~ where seq=?
+	public int delete(BoardDTO dto) {
+		if(dto.getSeq()==dto.getRoot()) {
+			//원글 삭제
+			sql = "Delete From board Where root =?";
+		}else {
+			//답글 삭제
+			sql = "Delete From board Where seq =?";
+		}
 		try {
 			pst=cn.prepareStatement(sql);
-			
+			pst.setInt(1, dto.getSeq());
 			return pst.executeUpdate();
 		}catch(Exception e) {
 			System.out.println("** delete Exception => " + e.toString());
 			return 0;
 		}
-	}
-}
+	}//delete
+}//class
