@@ -45,10 +45,9 @@ ${requestScope.message}<br>
 </c:if>
 
 <!-- 로그인id와 글쓴이id가 동일하면 수정, 삭제 가능 -->
-
 &nbsp;<a href="/spring02/home">HOME</a>&nbsp;
 &nbsp;<a href="boardUpdate?seq=${detail.seq}">게시글 수정</a>&nbsp;
-&nbsp;<a href="delete?jCode=${detail.seq}">게시글 삭제</a>&nbsp;
+&nbsp;<a href="delete?seq=${detail.seq}&root=${apple.root}">게시글 삭제</a>&nbsp;
 &nbsp;<a href="javascript:history.go(-1)">이전으로</a>&nbsp;
 </body>
 </html>

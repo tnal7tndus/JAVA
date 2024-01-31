@@ -1,6 +1,5 @@
 package com.ncs.spring02.controller;
 
-import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -60,7 +59,7 @@ public class BoardController {
 	@GetMapping("/boardList")
 	public void selectListForm(Model model) {
 		model.addAttribute("apple", service.selectList());
-	}
+	}//replyInsert
 
 	// ** Board Detail
 	// => 글요청 처리중, 글을 읽기 전
@@ -89,14 +88,13 @@ public class BoardController {
 			service.update(dto);
 		}
 		model.addAttribute("apple", dto);
-
 		return uri;
-	}
+	}//boardDetail
 
 	@GetMapping("/boardInsert")
 	public void selectInsertForm(Model model, BoardDTO dto) {
 		model.addAttribute("apple", service.insert(dto));
-	}
+	}//boardDetail
 
 	@GetMapping("/insert")
 	public String insert(Model model, BoardDTO dto) {
@@ -110,7 +108,7 @@ public class BoardController {
 			model.addAttribute("message", "게시글 등록 실패! 다시 입력하세요");
 		}
 		return uri;
-	}
+	}//boardInsert
 
 	@GetMapping("/boardUpdate")
 	public void selectUpdateForm(Model model, BoardDTO dto) {
@@ -125,21 +123,19 @@ public class BoardController {
 		} else {
 			uri = "board/boardList";
 			model.addAttribute("message", "게시글 수정 실패! 다시 입력하세요!");
-
 		}
 		return uri;
-	}
+	}//boardUpdate
 
 	@GetMapping("/delete")
-	public String delete(Model model, RedirectAttributes rttr, @RequestParam("jCode") int seq) {
+	public String delete(BoardDTO dto, Model model, RedirectAttributes rttr, @RequestParam("jCode") int seq) {
 		String uri = "redirect:/";
-		if (service.delete(seq) > 0) {
+		if (service.delete(dto) > 0) {
 			rttr.addFlashAttribute("message", "삭제 완료");
 		} else {
 			uri = "board/boardDetail";
 			model.addAttribute("message", "삭제 실패! 다시 누르세요!");
-			model.addAttribute("apple", service.selectOne(seq));
 		}
 		return uri;
-	}
-}
+	}//delete
+}//clss

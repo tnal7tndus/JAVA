@@ -24,6 +24,7 @@ public class MemberDAO {
 	private static ResultSet rs;
 	private static String sql;
 	
+	
 	// ** selectList
 	public List<MemberDTO> selectList() { // static 생략
 		sql = "select * from member";
