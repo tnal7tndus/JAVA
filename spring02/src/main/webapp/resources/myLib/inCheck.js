@@ -31,56 +31,115 @@
 // 1) ID
 // => 길이, 영문과 숫자만 가능
 function idCheck(){
+	let special = /[a-z.0-9]/gi;
 	let id=document.getElementById('id').value;
 	if(id.length<4 || id.length>10){
-		document.getElementById('iMessage').innerHTML='id는 4~10 글자 입니다.'
+		document.getElementById('iMessage').innerHTML='id는 4~10 글자 입니다.';
 		return false;
-	// => 영문과 숫자로만 입력했는지 : id 에서 영문과 숫자를 모두 '' 로 변경했을때 length 가 0 이면 OK 
-	}else if(id.replace (/[a-z.0-9]/gi,'').length>0){
-		document.getElementById('iMessage').innerHTML='id는 영문과 숫자만 가능합니다.'
+	// => 영문과 숫자로만 입력했는지 : id에서 영문과 숫자를 모두 '' 로 변경했을때 length가 0이면 OK 
+	}else if(id.replace (special,'').length>0){
+	
+	//=> test(검사대상문자) 메서드 활용 (불규칙 => replace로 )
+	//	 정규식에 정의된 문자가 아닌 문자가 있으면 false,
+	//	 그러므로 false면 오류 메세지 출력
+	//}else if(!special.test(id)){
+		document.getElementById('iMessage').innerHTML='id는 영문과 숫자만 가능합니다.';
 		return false;
 	}else{
 		document.getElementById('iMessage').innerHTML='';
 		return true;
 	}
-}
+}//idCheck
+
 // 2) Password
+// => input Tag의 type="password"인 경우 키보드는 자동 영문
 function pwCheck(){
+	let special = /[a-z.0-9.!-*.@]/gi;
 	let pw=document.getElementById('password').value;
 	if(pw.length<4 || pw.length>10){
-		document.getElementById('pMessage').innerHTML='password는 4~10글자 입니다'
+		document.getElementById('pMessage').innerHTML='password는 4~10글자 입니다';
 		return flase;
 	//=> 영문, 숫자, 특수문자로만 구성
-	}else if(pw.replace(/[a-z.0-9.!-*.@]/gi,'').length>0){
-		document.getElementById('pMessage').innerHTML='password는 영문, 숫자, 특수문자만 가능합니다'
-		
-	//=> 특수문자 반드시 포함	
-	}else if(pw.replace(/[].gi,'').length>0){
+	// }else if(!special.test(pw)){
+		}else if(pw.replace(special,'').length > 0){
+		document.getElementById('pMessage').innerHTML='password는 영문, 숫자, 특수문자만 가능합니다';
+		return false;
+	//=> 특수문자 반드시 포함	: replcae 적용
+	//* 메서드   
+   //("문자열").replace(/정규표현식/, "대체문자열") : "정규표현식"에 매칭되는 항목을 "대체문자열"로 변환
+   //(정규표현식).test("문자열") : 정규식과 일치하는 문자열이 있으면 true 아니면  false를 return 
+   //(정규표현식).exec("문자열") : 정규식과 일치하는 문자열을 return 
+	}else if(pw.replace(/[!-*.@]/gi,'').length >= pw.length){
+		document.getElementById('pMessage').innerHTML='password는 특수문자가 반드시 포함되어야 합니다';
 		
 	}else{
-		document.getElementById('pMessage').innerHTML=';'
+		document.getElementById('pMessage').innerHTML='';
 		return true;
 	}
-}
+}//pwCheck
+
 // 3) Password2
+// => password와 동일성 확인
 function pw2Check(){
+	let pw=document.getElementById('password').value;
 	let pw2=document.getElementById('password2').value;
-	
-	return true;
-}
-// 4) Name
+	if(pw!=pw2){
+		document.getElementById('p2Message').innerHTML='password가 다릅니다';
+		return false;
+	}else{
+		document.getElementById('p2Message').innerHTML='';
+		return true;
+	}
+}//pw2Check
+
+// 4) Name : 길이, 한글 또는 영문
 function nmCheck(){
 	let name=document.getElementById('name').value;
-	
-	return true;
-}
-// 5) Age
+	if(name.length < 2){
+		document.getElementById('nMessage').innerHTML='이름은 2글자 이상 입력하세요';
+		return false;
+	}else if(name.replace(/[a-z.가-힣]/gi,'').length > 0){
+		document.getElementById('nMessage').innerHTML='이름은 한글,영문만 입력하세요';
+		return false;
+	}else{
+		document.getElementById('nMessage').innerHTML='';
+		return true;
+	}
+}//nmCheck
+
+// 5) Age (정수)
+// => 정수의 조건 : 숫자이면서 소수점이 없어야함
+// => Number.isInteger(n) : n이 정수일때만 true
+// 	-> 단, n은 숫자Type 이어야함
+//	-> value 속성의 값은 문자 Type 이므로 숫자화_parseInt 가 필요함
+//	-> 단, parseInt(age) 사용시 주의
+//		- 실수의 경우에는 정수만 사용(123.56 -> 123)
+// 		- 숫자 뒤쪽에 문자가 포함되면 앞쪽의 숫자만 가져와 정수 return (123abc -> 123)
+//		- 문자로 시작하면 문자로 취급, NaN(Not a Number)을 return
+// => 숫자 아닌값이 있는지 확인, Number.isInteger(...) 확인
 function agCheck(){
 	let age=document.getElementById('age').value;
+	console.log(`** parseInt(age) => ${parseInt(age)}`);
+	console.log(`** Number.isInteger(age) => ${Number.isInteger(age)}`);
+	console.log(`** Number.isInteger(parseInt(age)) => ${Number.isInteger(parseInt(age))}`);
 	
-	return true;
-}
+	if(age.replace(/[^0-9]/,'').length < age.length ||
+		Number.isInteger(parseInt(age))==false){
+		document.getElementById('aMessage').innerHTML='정수만 입력하세요';
+		return false;
+	}else{
+		document.getElementById('aMessage').innerHTML='';
+		return true;
+	}
+}//agCheck
+
 // 6) Point
+// => 정수 또는 실수 허용
+// => 범위: 100 ~ 10000
+// => parseFloat(point)
+//      -> 오류 또는 입력값이 없는 경우 NaN return
+//      -> 확인 : Number.isNaN(parseFloat(point)) 
+//    -> 단, 숫자로 시작하면 뒤쪽에 문자가 섞여있어도 숫자값만 사용함 ( NaN 을 return 하지않음 ) 
 function poCheck(){
 	let point=document.getElementById('point').value;
 	
