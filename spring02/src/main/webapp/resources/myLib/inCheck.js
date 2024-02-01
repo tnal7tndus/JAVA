@@ -1,20 +1,28 @@
+/*
+** 이클립스 자바스크립트 파일 내용이 흑백으로 나올때... 컬러로 고치기 
+=> https://creampuffy.tistory.com/66
+
+윈도우 - 프레퍼런스 - 제네럴 - 에디터스 - 파일 어소시에이션 - 
+add - *.js - 밑에 제네릭 텍스트 에디터 디폴트
+
+******************************************** */
 /**
 ** 입력값의 무결성 확인
 ** member 무결성 확인사항
 // ID : 길이(4~10), 영문자,숫자 로만 구성
 // Password : 길이(4~10), 영문,숫자,특수문자로 구성, 특수문자는 반드시 1개 이상 포함할것
 // Password2: 재입력후 Password 와 일치성 확인
-// Name : 길이(2이상), 영문 또는 한글로 만 입력
+// Name : 길이(2이상), 영문 또는 한글로만 입력
 // Age: 정수의 범위  ( 숫자이면서, '.'이 없어야함 )  
 // BirthDay : 입력 여부 확인  ( length == 10 )
-// Point : 실수 ( 구간설정 100 ~ 10000 까지만 가능 )
-// Jno : select 를 이용 (X)
+// Point : 실수 ( 구간설정 100 ~ 10000까지만 가능 )
+// Jno : select를 이용 (X)
 // Info : (X)
 // Rid : (X)
 
 ** 작성 규칙
-   => JavaScript function 으로 정의 하고 
-      결과를 true or false 로 return
+   => JavaScript function으로 정의 하고 
+      결과를 true or false로 return
    => 정규식을 활용한다.
    
 ** match Test
@@ -139,18 +147,40 @@ function agCheck(){
 // => parseFloat(point)
 //      -> 오류 또는 입력값이 없는 경우 NaN return
 //      -> 확인 : Number.isNaN(parseFloat(point)) 
-//    -> 단, 숫자로 시작하면 뒤쪽에 문자가 섞여있어도 숫자값만 사용함 ( NaN 을 return 하지않음 ) 
+//    -> 단, 숫자로 시작하면 뒤쪽에 문자가 섞여있어도 숫자값만 사용함 ( NaN 을 return 하지않음 )
 function poCheck(){
 	let point=document.getElementById('point').value;
+	console.log(`** parseFloat(point) => ${parseFloat(point)}`)
+	console.log(`** Number.isNaN(point) => ${Number.isNaN(point)}`)
+	console.log(`** Number.isNaN(parseFloat(point)) => ${Number.isNaN(parseFloat(point))}`)
 	
-	return true;
-}
+	// => 숫자 아닌 값이 있는지 확인, Number.isNaN(...) 적용
+	// => 단, 소숫점은 허용
+	//		(비교값으로 소숫점을 사용하기위해 "\."으로 표기함)
+	if(point.replace(/[^0-9.\.]/g,'').length < point.length ||
+		Number.isNaN(parseFloat(point)) ){
+		document.getElementById('oMessage').innerHTML='point는 정수 또는 실수만 입력하세요';
+		return false;
+	}else if(parseFloat(point)<100 || parseFloat(point)>10000){
+		document.getElementById('oMessage').innerHTML='point 값이 범위(100~10000)를 벗어납니다';
+		return false;
+	}else{
+		document.getElementById('oMessage').innerHTML='';
+		return true;
+	}
+}//poCheck
+
 // 1) Birthday
 function bdCheck(){
 	let birthday=document.getElementById('birthday').value;
-	
-	return true;
-}
+	if(birthday.length!=10){
+		document.getElementById('bMessage').innerHTML='birthday (yyyy-mm-dd)입력 확인하세요';
+		return false;
+	}else{
+		document.getElementById('bMessage').innerHTML='';
+		return true;
+	}
+}//bdCheck
 
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
