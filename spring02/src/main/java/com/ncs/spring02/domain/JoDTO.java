@@ -7,13 +7,14 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor // 생성자 자동 생성
 @NoArgsConstructor // 기본 생성자 자동 생성
 @Data
-public class JoDTO {
+public class JoDTO{
 	//** private으로 멤버변수 정의
 	private int jno;
 	private String jname;
 	private String captain;
 	private String project;
 	private String slogan;
+//	private String uploadfile;
 
 
 	//** 1) 생성자

@@ -2,47 +2,29 @@ package com.ncs.spring02.service;
 
 import java.util.List;
 
-import javax.print.attribute.standard.DateTimeAtProcessing;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import com.ncs.spring02.domain.MemberDTO;
-import com.ncs.spring02.model.MemberDAO;
 
-@Service
-public class MemberService {
-	//** 전역변수 정의
-	@Autowired
-	MemberDAO dao;
-//	MemberDAO dao = new MemberDAO();
-	
+public interface MemberService {
+
 	//** selectList
-	public List<MemberDTO> selectList(){
-		return dao.selectList();
-	}
+	public List<MemberDTO> selectList();
 	
 	//** selectOne
-	public MemberDTO selectOne(String id) {
-		return dao.selectOne(id);
-	}
+	public MemberDTO selectOne(String id);
 	
 	//** insert
-	public int insert(MemberDTO dto) {
-		return dao.insert(dto);
-	}
+	public int insert(MemberDTO dto);
+	
 	//** update
-	public int update(MemberDTO dto) {
-		return dao.update(dto);
-	}
+	public int update(MemberDTO dto);
+	
+	//** Password_Update
+	public int pwUpdate(MemberDTO dto);
+	
 	//** delete
-	public int delete(String id) {
-		return dao.delete(id);
-	}
+	public int delete(String id);
 	
 	//** selectJoList
-	public List<MemberDTO> selectJoList(String jno) {
-		return dao.selectJoList(jno);
-	}
+	public List<MemberDTO> selectJoList(String jno);
 
-}//class
+}

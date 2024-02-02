@@ -8,17 +8,19 @@
 <title>** UpdateForm **</title>
 </head>
 <body>
-<h2>** Web MCV2 UpdateForm2 **</h2>
+<h2>** Web MCV2 UpdateForm **</h2>
 <form action="update" method="post">
 <table>
 	<tr height="20">
 		<td bgcolor="Pink"><label for="id">I  D</label></td>
 		<td><input type="text" name="id" id="id" value="${requestScope.apple.id}" readonly size="20"></td>
 	</tr>
-	<tr height="20">
+	<%-- PasswordEncoder 적용 후 분리함
+	
+	 <tr height="20">
 		<td bgcolor="Pink"><label for="password">Password</label></td>
 		<td><input type="password" name="password" id="password" value="${requestScope.apple.password}" size="20"></input></td>
-	</tr>
+	</tr> --%>
 	<tr height="20">
 		<td bgcolor="Pink"><label for="name">Name</label></td>
 		<td><input type="text" name="name" id="name" value="${requestScope.apple.name}" size="20"></td>
@@ -62,6 +64,7 @@
 </table>
 </form>
 <br><hr>
+&nbsp;<a href="pwUpdate">비밀번호 수정</a>&nbsp;
 <c:if test="${!empty requestScope.message}">
 => ${requestScope.message}
 </c:if>

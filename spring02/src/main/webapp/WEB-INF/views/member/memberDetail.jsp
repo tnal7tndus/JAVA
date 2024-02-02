@@ -14,12 +14,13 @@
 <tr bgcolor="yellow">
 
 	<th>Name</th><th>Age</th><th>Jno</th><th>Info</th>
-	<th>Point</th><th>Birthday</th><th>Rid</th>
+	<th>Point</th><th>Birthday</th><th>Rid</th><th>uploadfile</th>
 </tr>
 <c:set value="${requestScope.apple}" var="v" />
 	<tr>
 		<td>${v.name}</td><td>${v.age}</td><td>${v.jno}</td><td>${v.info}</td>
 		<td>${v.point}</td><td>${v.birthday}</td><td>${v.rid}</td>
+		<td><img alt="myImage" src="/spring02/resources/images/${v.uploadfile}" width="50" height="50"></td>
 	</tr>
 </table>
 <hr>

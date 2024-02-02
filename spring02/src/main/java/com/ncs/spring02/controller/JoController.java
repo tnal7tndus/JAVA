@@ -12,8 +12,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.ncs.spring02.domain.JoDTO;
 import com.ncs.spring02.service.JoService;
-
-import lombok.AllArgsConstructor;
+import com.ncs.spring02.service.MemberService;
 
 
 @Controller
@@ -23,8 +22,8 @@ import lombok.AllArgsConstructor;
 public class JoController {
 	@Autowired(required = false)
 	JoService service;  // =new JoService();
-//	@Autowired
-//	MemberSerivce mservice;
+	@Autowired
+	MemberService mservice;
 	String uri;
 	
 	@RequestMapping(value = "/joInsert" ,method=RequestMethod.GET)
@@ -44,8 +43,9 @@ public class JoController {
 	
 	
 	@RequestMapping(value = "/joDetail", method = RequestMethod.GET)
-	public void joDetail( Model model, @RequestParam("jno")String jCode) {
-		model.addAttribute("apple", service.selectJoDetail(jCode));
+	public void joDetail( Model model, @RequestParam("jno")String jno) {
+		model.addAttribute("apple", service.selectJoDetail(jno));
+		model.addAttribute("banana", mservice.selectJoList(jno));
 //	String uri = "jo/joDetail";
 //	model.addAllAttributes("apple", service.selectOne(dto));
 //	if("U".equals(jCode))

@@ -32,6 +32,7 @@ public class JoDAO {
 					dto.setCaptain(rs.getString(3));
 					dto.setProject(rs.getString(4));
 					dto.setSlogan(rs.getString(5));
+//					dto.setUploadfile(rs.getString(6));
 					list.add(dto);
 				}while (rs.next());
 				return list;
@@ -58,6 +59,7 @@ public class JoDAO {
 				dto.setCaptain(rs.getString(3));
 				dto.setProject(rs.getString(4));
 				dto.setSlogan(rs.getString(5));
+//				dto.setUploadfile(rs.getString(6));
 				return dto;
 			}else {
 				return null;
