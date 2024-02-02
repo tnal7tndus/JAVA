@@ -23,7 +23,7 @@
 </c:if>
 
 <hr>
-<img alt="mainImage" src="/spring02/resources/images/tulips.png" width="300" height="200">
+<img alt="mainImage" src="/spring02/resources/images/aaa.gif" width="300" height="300">
 <hr>
 
 <!-- Login 전  -->

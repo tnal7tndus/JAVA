@@ -12,12 +12,14 @@
 
 <table border="1" sytle="width:100%">
 	<tr height="20" bgcolor="pink">
-		<th>JNO</th><th>JNAME</th><th>CAPTAIN</th><th>PROJECT</th><th>SLOGAN</th>
+		<th>JNO</th><th>JNAME</th><th>CAPTAIN</th><th>PROJECT</th><th>SLOGAN</th><!-- <th>uploadfile</th> -->
 	</tr>
 	<c:if test="${!empty requestScope.apple}">
 		<c:set var="v" value="${requestScope.apple}"/>
 		<tr><td>${v.jno}</td><td>${v.jname}</td><td>${v.captain}</td>
-		<td>${v.project}</td><td>${v.slogan}</td></tr>
+		<td>${v.project}</td><td>${v.slogan}</td>
+		<%-- <td><img alt="myImage" src="/spring02/resources/images/${v.uploadfile}" width="50" height="50"></td> --%>
+		</tr>
 	</c:if>
 </table>
 
@@ -29,10 +31,11 @@
 		<th>ID</th><th>Password</th><th>Name</th><th>Age</th>
 		<th>Jno</th><th>Info</th><th>Point</th><th>Birthday</th><th>Rid</th>
 	</tr>
-	<c:if test="${!empty requstScope.apple}">
-		<c:set var="s" value="${requestScope.apple}"/>
-		<tr><td>${s.id}</td><td>${s.password}</td><td>${s.name}</td><td>${s.age}</td><td>${s.jno}</td>
-		<td>${s.info}</td><td>${s.point}</td><td>${s.birhday}</td><td>${s.rid}</td></tr>
+	<c:if test="${!empty requestScope.banana}">
+		<c:forEach var="s" items="${requestScope.banana}">
+			<tr><td>${s.id}</td><td>${s.password}</td><td>${s.name}</td><td>${s.age}</td><td>${s.jno}</td>
+			<td>${s.info}</td><td>${s.point}</td><td>${s.birthday}</td><td>${s.rid}</td></tr>
+		</c:forEach>
 	</c:if>
 	
 </table>

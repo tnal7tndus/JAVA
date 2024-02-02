@@ -173,7 +173,7 @@
 => sqlplus system/oracle
 => alter table member MODIFY password varchar2(100) ;
 => 추후 모든 자료 password 값 변경 (모두 12345! 의 다이제스트로 변경)
-   update member set password='$2a$10$H6cNjqPneGWtJPgqNRpUKOsXOuq/wknRjR2gDj0H9tqOlkOQm6k5i' ;
+   update member set password='$2a$10$tqmki0Zj2dg9u7KeXzQO9uFMgu2.RW1xQgI4ph8UmC.J2WfZiy2l2' ;
    commit;
 
 => select * from member ;

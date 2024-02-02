@@ -15,13 +15,15 @@
 </c:if>
 <table border="1" sytle="width:100%">
 <tr bgcolor="Lime">
-	<th>ID</th><th>Password</th><th>Name</th><th>Age</th><th>Jno</th>
-	<th>Info</th><th>Point</th><th>Birthday</th><th>추천인</th>		
+	<th>ID</th><!-- <th>Password</th> --><th>Name</th><th>Age</th><th>Jno</th>
+	<th>Info</th><th>Point</th><th>Birthday</th><th>추천인</th><th>Image</th>				
 </tr>
 <c:if test="${!empty requestScope.apple}">
 	<c:forEach var="v" items="${requestScope.apple}">
-		<tr><td>${v.id}</td><td>${v.password}</td><td>${v.name}</td><td>${v.age}</td><td>${v.jno}</td>
-		<td>${v.info}</td><td>${v.point}</td><td>${v.birthday}</td><td>${v.rid}</td></tr>
+		<tr><td>${v.id}</td><%-- <td>${v.password}</td> --%><td>${v.name}</td><td>${v.age}</td><td>${v.jno}</td>
+		<td>${v.info}</td><td>${v.point}</td><td>${v.birthday}</td><td>${v.rid}</td>
+		<td><img alt="myImage" src="/spring02/resources/images/${v.uploadfile}" width="50" height="50"></td>
+		</tr>
 	</c:forEach>
 </c:if>
 <c:if test="${empty requestScope.apple}">
