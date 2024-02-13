@@ -41,7 +41,6 @@ public class JoController {
 		model.addAttribute("apple", service.selectJoList());
 	}
 	
-	
 	@RequestMapping(value = "/joDetail", method = RequestMethod.GET)
 	public void joDetail( Model model, @RequestParam("jno")String jno) {
 		model.addAttribute("apple", service.selectJoDetail(jno));
@@ -55,9 +54,6 @@ public class JoController {
 //		return uri;
 //	
 	}
-	
-	
-	
 	
 	//**insert
 	@RequestMapping(value = "/Insert", method = RequestMethod.GET)

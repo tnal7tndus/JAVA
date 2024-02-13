@@ -293,7 +293,7 @@ public class MemberController {
 	      // 1.2) realPath를 이용해서 물리적저장위치 (file1) 확인
 	      if ( realPath.contains(".eclipse.") ) // 개발중
 	           realPath ="E:\\Mtest\\Mywork\\spring02\\src\\main\\webapp\\resources\\uploadImages\\";
-	      else realPath ="resources\\\\uploadImages\\";
+	      else realPath ="E:\\Mtest\\IDESet\\apache-tomcat-9.0.85\\webapps\\spring02\\resources\\uploadImages\\";
 	      
 	      // 1.3) 폴더 만들기 (없을수도 있음을 가정, File 실습)
 	      // => File type 객체 생성 : new File("경로");
@@ -399,13 +399,45 @@ public class MemberController {
 	
 	//** Update
 	@RequestMapping(value = "/update", method=RequestMethod.POST)
-	public String update(HttpSession session, Model model, MemberDTO dto ) {
+	public String update(HttpServletRequest request, HttpSession session,
+			Model model, MemberDTO dto ) throws IOException {
 		//1. 요청분석
 		//=> 성공: memberDetail, 실패: updateForm
 		//=> 두 경우 모두 출력하려면 dto 객체의 값("apple")이 필요하므로 보관 
 		
 		String uri = "member/memberDetail"; //성공시
 		model.addAttribute("apple", dto);
+		
+		//** uploadFile 처리
+		//=> newImage 선택 여부
+		//=> 선택-> oldImage 삭제, newImage 저장 : uploadfilef 사용
+		//=> 선택하지않음 -> oldeImage가 uploadfile로 전달되었으므로 그냥 사용하면 됨
+		
+		MultipartFile uploadfilef = dto.getUploadfilef();
+	    if ( uploadfilef!=null && !uploadfilef.isEmpty() ) {
+	    	// => newImage를 선택함  
+	    	//1) 물리적위치 저장 (file1)
+	    	String realPath = request.getRealPath("/");
+	    	String file1;
+		    
+		    //2) realPath를 이용해서 물리적저장위치 (file1) 확인
+		    if ( realPath.contains(".eclipse.") ) // 개발중
+		         realPath ="E:\\Mtest\\Mywork\\spring02\\src\\main\\webapp\\resources\\uploadImages\\";
+		    else realPath ="E:\\Mtest\\IDESet\\apache-tomcat-9.0.85\\webapps\\spring02\\resources\\uploadImages\\"; 
+	    
+		    //3) oldFile 삭제
+		    //=> oldFile Name : dto.getUploadfile()
+		    //=> 삭제경로 : realPath + dto.getUploadfile()
+		    File delFile = new File(realPath + dto.getUploadfile());
+		    if (delFile.isFile()) delFile.delete(); // file 존재하면 삭제
+		    
+		    //4) newFile 저장
+	        file1=realPath+uploadfilef.getOriginalFilename(); //저장경로(relaPath+화일명) 완성
+	        uploadfilef.transferTo(new File(file1)); //해당경로에 저장(붙여넣기)
+	         
+	        //5) Table 저장경로 수정
+	        dto.setUploadfile(uploadfilef.getOriginalFilename());
+	     }
 		
 		//2. Service & 결과
 		if(service.update(dto) > 0) {

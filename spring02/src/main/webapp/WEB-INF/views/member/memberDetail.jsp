@@ -20,7 +20,7 @@
 	<tr>
 		<td>${v.name}</td><td>${v.age}</td><td>${v.jno}</td><td>${v.info}</td>
 		<td>${v.point}</td><td>${v.birthday}</td><td>${v.rid}</td>
-		<td><img alt="myImage" src="/spring02/resources/images/${v.uploadfile}" width="50" height="50"></td>
+		<td><img alt="myImage" src="/spring02/resources/uploadImages/${v.uploadfile}" width="50" height="50"></td>
 	</tr>
 </table>
 <hr>

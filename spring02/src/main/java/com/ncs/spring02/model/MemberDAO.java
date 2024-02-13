@@ -24,7 +24,6 @@ public class MemberDAO {
 	private static ResultSet rs;
 	private static String sql;
 	
-	
 	// ** selectList
 	public List<MemberDTO> selectList() { // static 생략
 		sql = "select * from member";
@@ -116,8 +115,8 @@ public class MemberDAO {
 	// ** update
 	// => id(P.Key) 제외한 모든컬럼 수정
 	public int update(MemberDTO dto) {
-		sql = "update member set, name=?, age=?, jno=?, info=?"
-				+ ",point=?, birthday=?, rid=? where id=?";
+		sql = "update member set name=?, age=?, jno=?, info=?"
+				+ ",point=?, birthday=?, rid=?, uploadfile=? where id=?";
 		try {
 			pst = cn.prepareStatement(sql);
 //			pst.setString(1, dto.getPassword());
@@ -128,7 +127,8 @@ public class MemberDAO {
 			pst.setDouble(5, dto.getPoint());
 			pst.setString(6, dto.getBirthday());
 			pst.setString(7, dto.getRid());
-			pst.setString(8, dto.getId());
+			pst.setString(8, dto.getUploadfile());
+			pst.setString(9, dto.getId());
 
 			return pst.executeUpdate(); // 처리갯수
 		} catch (Exception e) {

@@ -9,7 +9,7 @@
 </head>
 <body>
 <h2>** Web MCV2 UpdateForm **</h2>
-<form action="update" method="post">
+<form action="update" method="post" enctype="multipart/form-data">
 <table>
 	<tr height="20">
 		<td bgcolor="Pink"><label for="id">I  D</label></td>
@@ -55,6 +55,38 @@
 	<tr height="20">
 		<td bgcolor="Pink"><label for="rid">추천인</label></td>
 		<td><input type="text" name="rid" id="rid" value="${requestScope.apple.rid}" size="20"></td>
+	</tr>
+	<!-- Image Update 추가 
+         => form Tag : method, enctype 확인
+         => new Image를 선택하는 경우 -> uploadfilef 사용
+         => new Image를 선택하지않는 경우 
+            -> 본래 Image를 사용 -> uploadfile 값이 필요함 (hidden으로 보관)
+   	-->   
+	<tr height="20">
+		<td bgcolor="Pink"><label for="uploadfilef">Image</label></td>
+		<td><img alt="MyImage" width="100" height="100" class="select_img"
+				src="/spring02/resources/uploadImages/${requestScope.apple.uploadfile}">
+			<input type="hidden" name="uploadfile" id="uploadfile" value="${requestScope.apple.uploadfile}">
+			<br>
+			<input type="file" name="uploadfilef" id="uploadfilef" size="20">
+		</td>
+		
+      <script>
+        document.getElementById('uploadfilef').onchange=function(e){
+         if(this.files && this.files[0]) {
+            let reader = new FileReader;
+            reader.readAsDataURL(this.files[0]);
+             reader.onload = function(e) {
+                // => jQuery를 사용하지 않는경우 
+                document.getElementsByClassName('select_img')[0].src=e.target.result;
+                
+               //$(".select_img").attr("src", e.target.result)
+               //            .width(70).height(90); 
+               } // onload_function
+          } // if   
+        }; //change  
+      </script>
+      
 	</tr>
 	<tr><td></td>
 		<td><input type="submit" value="수정">&nbsp;&nbsp;
