@@ -294,8 +294,26 @@ function inCheck(){
 	<tr height="20">
 	<!-- ** File Upload 기능추가 -->
 		<td bgcolor="MediumPurple"><label for="uploadfilef">Image</label></td>
-		<td><input type="file" name="uploadfilef" id="uploadfilef" size="20"></td>
+		<td><img alt="MyImage" src="" width="100" height="100" class="select_img">
+		<br>
+		<input type="file" name="uploadfilef" id="uploadfilef" size="20"></td>
 	</tr>
+	
+    <script>
+        document.getElementById('uploadfilef').onchange=function(e){
+         if(this.files && this.files[0]) {
+            let reader = new FileReader;
+            reader.readAsDataURL(this.files[0]);
+             reader.onload = function(e) {
+                // => jQuery를 사용하지 않는경우 
+                document.getElementsByClassName('select_img')[0].src=e.target.result;
+                
+               //$(".select_img").attr("src", e.target.result)
+               //            .width(70).height(90); 
+               } // onload_function
+          } // if   
+        }; //change  
+    </script>
 	
 	<tr><td></td>
 		<td><input type="submit" id="submitTag" value="가입" onclick="return inCheck()" disabled="disabled">&nbsp;&nbsp;

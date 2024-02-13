@@ -8,33 +8,20 @@ import org.springframework.stereotype.Service;
 import com.ncs.spring02.domain.JoDTO;
 import com.ncs.spring02.model.JoDAO;
 
-@Service
-public class JoService {
-	@Autowired
-	JoDAO dao;
+public interface JoService {
 	
 	//**selectJoList
-	public List<JoDTO> selectJoList(){
-		return dao.selectJoList();
-	}
+	public List<JoDTO> selectJoList();
 	
 	//**selectJoDetail
-	public JoDTO selectJoDetail(String jno) {
-		return dao.selectJoDetail(jno);
-	}
+	public JoDTO selectJoDetail(String jno);
 	
 	//**insert
-	public int insert(JoDTO dto) {
-		return dao.insert(dto);
-	}
+	public int insert(JoDTO dto);
 	
 	//**update
-	public int update(JoDTO dto) {
-		return dao.update(dto);
-	}
+	public int update(JoDTO dto);
 	
 //	**delete
-	public int delete(String jno) {
-		return dao.delete(jno);
-	}
+	public int delete(String jno);
 }
