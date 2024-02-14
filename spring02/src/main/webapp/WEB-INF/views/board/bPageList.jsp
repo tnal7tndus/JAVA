@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>** Board List **</title>
+<title>** Board Page List **</title>
 </head>
 <body>
 <h2>** Board List **</h2>
@@ -49,6 +49,47 @@
 	</table>
 	<br>
 	<hr>
+	
+	<div align="center">
+	<!-- ** Paging Block ** 
+	   => ver01: QueryString 수동 입력 -> 자동생성
+	   1) FirstPage, Prev  -->
+	   <c:choose>
+	   		<c:when test="${pageMaker.prev && pageMaker.spageNo>1}">
+	   			<a href="bPageList?currPage=1 & rowsPerPage=5">FP</a>&nbsp;
+	     		<a href="bPageList?currPage=${pageMaker.spageNo-1} & rowsPerPage=5">&LT;</a>&nbsp;&nbsp;
+	     	</c:when>
+	     	<c:otherwise>
+	     		<font color="gray">FP&nbsp;&LT;&nbsp;&nbsp;</font>
+	     	</c:otherwise>
+	   </c:choose>	     
+	<!-- 2) Display PageNo 
+		 => currPage 제외한 pageNo만 a Tag 적용
+	-->
+		<c:forEach var="i" begin="${pageMaker.spageNo}" end="${pageMaker.epageNo}">
+			<c:if test="${i==pageMaker.cri.currPage}">
+				<font color="orange" size="5"><b>${i}</b></font>&nbsp;
+			</c:if>
+			<c:if test="${i!=pageMaker.cri.currPage}">
+				<a href="bPageList?currPage=${i}&rowsPerPage=5">${i}</a>&nbsp;
+			</c:if>
+		</c:forEach>
+	<!-- 3) Next, LastPage  -->
+		<c:choose>
+			<c:when test="${pageMaker.next && pageMaker.epageNo>0}">
+			&nbsp;<a href="bPageList?currPage=${pageMaker.epageNo+1}&rowsPerPage=5">&GT;</a>
+			&nbsp;<a href="bPageList?currPage=${pageMaker.lastPageNo}&rowsPerPage=5">LP</a>
+			</c:when>
+			<c:otherwise>
+				<font color="gray">&nbsp;&GT;&nbsp;LP</font>
+			</c:otherwise>
+		</c:choose>
+	
+	
+	</div>
+	
+	
+	
 &nbsp;<a href="/spring02/home">HOME</a>&nbsp;
 &nbsp;<a href="boardInsert">게시글등록</a>&nbsp;
 &nbsp;<a href="javascript:history.go(-1)">이전으로</a>&nbsp;
