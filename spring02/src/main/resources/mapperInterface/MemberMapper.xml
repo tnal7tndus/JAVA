@@ -37,5 +37,9 @@
 		delete from member where id=#{id}
 	</delete>
 
+<!-- selectJoList -->
+	<select id="selectJoList" resultType="com.ncs.spring02.domain.MemberDTO">
+		select * from member where jno=#{jno}
+	</select>
 
 </mapper>
