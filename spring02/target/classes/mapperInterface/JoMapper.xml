@@ -5,7 +5,7 @@
 
 <!-- selectJoList -->
 	<select id="selectJoList" resultType="com.ncs.spring02.domain.JoDTO">
-		select * from jo
+		select j.jno, j.jname, captain, m.name cname, project, slogan from jo j join member m ON m.id = j.captain
 	</select>
 	
 <!-- selectJoDetail -->

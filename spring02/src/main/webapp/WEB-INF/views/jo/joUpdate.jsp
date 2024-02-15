@@ -30,7 +30,7 @@
 		<td bgcolor="skyblue"><label for="captain">CAPTAIN</label></td>
 		<td><input type="text" name="captain" id="captain" size="20" value="${requestScope.apple.captain}"></td>
 	</tr>
-	<tr height="20">
+		<tr height="20">
 		<td bgcolor="skyblue"><label for="project">PROJECT</label></td>
 		<td><input type="text" name="project" id="project" size="20" value="${requestScope.apple.project}"></td>
 	</tr>

@@ -18,7 +18,7 @@ public class JoDAO {
 	
 	//**joList
 	public List<JoDTO> selectJoList(){
-		sql = "select * from jo";
+		sql = "select j.jno, j.jname, captain, m.name cname, project, slogan from jo j join member m ON m.id = j.captain";
 		List<JoDTO> list = new ArrayList<JoDTO>();
 		try {
 			pst = cn.prepareStatement(sql);
@@ -30,8 +30,9 @@ public class JoDAO {
 					dto.setJno(rs.getInt(1));
 					dto.setJname(rs.getString(2));
 					dto.setCaptain(rs.getString(3));
-					dto.setProject(rs.getString(4));
-					dto.setSlogan(rs.getString(5));
+					dto.setCname(rs.getString(4));
+					dto.setProject(rs.getString(5));
+					dto.setSlogan(rs.getString(6));
 //					dto.setUploadfile(rs.getString(6));
 					list.add(dto);
 				}while (rs.next());
@@ -57,8 +58,9 @@ public class JoDAO {
 				dto.setJno(rs.getInt(1));
 				dto.setJname(rs.getString(2));
 				dto.setCaptain(rs.getString(3));
-				dto.setProject(rs.getString(4));
-				dto.setSlogan(rs.getString(5));
+				dto.setCname(rs.getString(4));
+				dto.setProject(rs.getString(5));
+				dto.setSlogan(rs.getString(6));
 //				dto.setUploadfile(rs.getString(6));
 				return dto;
 			}else {
@@ -72,14 +74,15 @@ public class JoDAO {
 	
 	//** joInsert
 	public int insert (JoDTO dto) {
-		sql = "insert into jo values(?,?,?,?,?)";
+		sql = "insert into jo values(?,?,?,?,?,?)";
 		try {
 			pst = cn.prepareStatement(sql);
 			pst.setInt(1, dto.getJno());
 			pst.setString(2, dto.getJname());
 			pst.setString(3, dto.getCaptain());
-			pst.setString(4, dto.getProject());
-			pst.setString(5, dto.getSlogan());
+			pst.setString(4, dto.getCname());
+			pst.setString(5, dto.getProject());
+			pst.setString(6, dto.getSlogan());
 			
 			return pst.executeUpdate();
 			
@@ -91,15 +94,16 @@ public class JoDAO {
 	
 	//**joUpdate
 	public int update(JoDTO dto) {
-		sql = "update jo set jname=?, captain=?, project=?, slogan=? Where jno=?";
+		sql = "update jo set jname=?, captain=?, name=?, project=?, slogan=? Where jno=?";
 		
 		try {
 			pst = cn.prepareStatement(sql);
 			pst.setString(1, dto.getJname());
 			pst.setString(2, dto.getCaptain());
-			pst.setString(3, dto.getProject());
-			pst.setString(4, dto.getSlogan());
-			pst.setInt(5, dto.getJno());
+			pst.setString(3, dto.getCname());
+			pst.setString(4, dto.getProject());
+			pst.setString(5, dto.getSlogan());
+			pst.setInt(6, dto.getJno());
 			
 			return pst.executeUpdate();
 		} catch (Exception e) {

@@ -12,11 +12,11 @@
 
 <table border="1" sytle="width:100%">
 	<tr height="20" bgcolor="pink">
-		<th>JNO</th><th>JNAME</th><th>CAPTAIN</th><th>PROJECT</th><th>SLOGAN</th><!-- <th>uploadfile</th> -->
+		<th>JNO</th><th>JNAME</th><th>CAPTAIN</th><th>조장이름</th><th>PROJECT</th><th>SLOGAN</th><!-- <th>uploadfile</th> -->
 	</tr>
 	<c:if test="${!empty requestScope.apple}">
 		<c:set var="v" value="${requestScope.apple}"/>
-		<tr><td>${v.jno}</td><td>${v.jname}</td><td>${v.captain}</td>
+		<tr><td>${v.jno}</td><td>${v.jname}</td><td>${v.captain}</td><td>${s.name}</td>
 		<td>${v.project}</td><td>${v.slogan}</td>
 		<%-- <td><img alt="myImage" src="/spring02/resources/images/${v.uploadfile}" width="50" height="50"></td> --%>
 		</tr>

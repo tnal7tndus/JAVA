@@ -16,6 +16,7 @@ public class JoDTO{
 	private String slogan;
 //	private String uploadfile;
 
+	private String cname;  //필요 시 사용
 
 	//** 1) 생성자
 	//=> default 생성자, 모든 값을 초기화하는 생성자
