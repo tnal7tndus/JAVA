@@ -45,6 +45,7 @@
 &nbsp;<a href ="board/boardList">boardList</a>&nbsp;
 &nbsp;<a href ="bcrypt">BCrypt</a><br>
 &nbsp;<a href ="board/bPageList">BPage</a>&nbsp;
+&nbsp;<a href ="member/mPageList">MPage</a>&nbsp;
 
 
 </body>

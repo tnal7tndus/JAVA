@@ -35,16 +35,23 @@ public class PageMaker {
 	
 	private boolean prev; // 이전 PageBlock으로 
 	private boolean next; // 다음 PageBlock으로 
+	//bChekList 또는 bPageList 등 요청명에 해당하는 url을 만들 수 있도록 하기 위함
+	private String mappingName;
 	
 	//=> ver01 : Criteria 사용
 	//=> ver02 : SearchCriteria 사용
 //	Criteria cri;  //ver01
 	SearchCriteria cri;   //ver02
 	
-	//** 필요값 계산
-	//1) Criteria
+	//** 필요값 set & 계산
+	//1) Criteria,
+	// => ver01: Criteria
+	// => ver02: SearchCriteria
 	public void setCri(SearchCriteria cri) {
 		this.cri=cri;
+	}
+	public void setmappingName(String mappingName) {
+		this.mappingName=mappingName;
 	}
 	//2) totalRowsCount
 	//=> 전체 Rows 갯수 : Read from DB
@@ -90,16 +97,19 @@ public class PageMaker {
 	// => ?currPage=7&rowsPerPage=10 이것을 만들어줌
 	//    ? 부터 만들어지므로 jsp Code에서 ? 포함하지 않도록 주의    
 	 
+	// => mappingName을 앞쪽에 추가함
+	
 	// ** ver01
 	// => QueryString 자동생성 
-	//    ?currPage=4&rowsPerPage=3    
+	//    bPageList?currPage=4&rowsPerPage=3
+	//	  또는  bCheckList?currPage=4&rowsPerPage=3
 	public String makeQuery(int currPage) {
 		UriComponents uriComponents =
 				UriComponentsBuilder.newInstance()
-				.queryParam("currPage", currPage).queryParam("rowsPerPage", cri.getRowsPerPage())
+				.queryParam("currPage", currPage)
+				.queryParam("rowsPerPage", cri.getRowsPerPage())
 				.build();
-		return uriComponents.toString();
-		
+		return this.mappingName+uriComponents.toString();
 	}//makeQuery
 	
    // ** ver02
@@ -141,7 +151,7 @@ public class PageMaker {
 				.queryParam("keyword", cri.getKeyword())
 				.queryParams(checkMap)
 				.build();
-		return uriComponents.toString();
+		return this.mappingName+uriComponents.toString();
 	}//searchQuery
 	
 	

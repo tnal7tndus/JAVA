@@ -17,6 +17,10 @@ public interface BoardService {
 	public List<BoardDTO> bCheckList(SearchCriteria cri);
 	public int bCheckRowsCount(SearchCriteria cri);
 	
+	//Board Saerch_List
+	public List<BoardDTO> bSearchList(SearchCriteria cri);
+	public int bSearchRowsCount(SearchCriteria cri);
+	
 	
 	//Board_Paging
 	//=> ver01 : Criteria 사용

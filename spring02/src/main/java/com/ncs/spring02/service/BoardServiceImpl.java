@@ -29,6 +29,16 @@ public class BoardServiceImpl implements BoardService {
 		return mapper.bCheckRowsCount(cri);
 	}
 	
+	//Board Saerch_List
+	@Override
+	public List<BoardDTO> bSearchList(SearchCriteria cri){
+		return mapper.bSearchList(cri);
+	}
+	@Override
+	public int bSearchRowsCount(SearchCriteria cri) {
+		return mapper.bSearchRowsCount(cri);
+	}
+
 	//** Board_Paging
 	@Override
 	public List<BoardDTO> bPageList(SearchCriteria cri) {

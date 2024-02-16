@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.ncs.spring02.domain.MemberDTO;
 
 import mapperInterface.MemberMapper;
+import pageTest.SearchCriteria;
 
 //** Mybatis 적용
 //=> CRUD 처리를 Mapper 를 이용
@@ -40,6 +41,30 @@ public class MemberServiceImpl implements MemberService {
 	
 	@Autowired
 	MemberMapper mapper;
+	
+	@Override
+	public List<MemberDTO> mCheckList(SearchCriteria cri) {
+		return mapper.mCheckList(cri);
+	}
+	@Override
+	public int mCheckRowsCount(SearchCriteria cri) {
+		return mapper.mCheckRowsCount(cri);
+	}
+	@Override
+	public List<MemberDTO> mSearchList(SearchCriteria cri) {
+		return mapper.mSearchList(cri);
+	}@Override
+	public int mSearchRowsCount(SearchCriteria cri) {
+		return mapper.mSearchRowsCount(cri);
+	}
+	@Override
+	public List<MemberDTO> mPageList(SearchCriteria cri) {
+		return mapper.mPageList(cri) ;
+	}
+	@Override
+	public int mtotalRowsCount(SearchCriteria cri) {
+		return mapper.mtotalRowsCount(cri);
+	}
 	
 	//** selectList
 	public List<MemberDTO> selectList(){
