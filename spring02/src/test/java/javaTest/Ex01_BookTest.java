@@ -6,7 +6,8 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
+
 
 //** Book class
 //=> 멤버필드 3개 (author, title, price) 정의, 이들을 모두 초기화하는 생성자 만들기
@@ -47,7 +48,7 @@ class Book {
 
 //=> 자동 import가 안되는경우
 //	-> 프로젝트 우클릭 -> Build Path -> Configure Build Path.. 
-//      	 -> Libraries -> Add Library -> JUnit5
+//      	 -> Libraries -> Add Library -> JUnit4
 //	-> @Test: import org.junit.Test 확인
 
 //=> pom.xml
@@ -55,7 +56,6 @@ class Book {
 //	-> dependency 추가 ( Spring MVC Mybatis Test )
 
 public class Ex01_BookTest {
-	
 	@Test
 	//1) assertEquals(a,b) : a와 b의 값(Value)이 같은지 확인
 	public void equalsTest() {
