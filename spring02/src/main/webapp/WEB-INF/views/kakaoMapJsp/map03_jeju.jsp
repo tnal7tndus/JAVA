@@ -44,8 +44,8 @@ var positions = [
 var imageSrc = "http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png"; 
 
 // infoTest 2) 마커에 표시할 인포윈도우 생성 
-// => zIndex : z-index 속성값 (jQuery 의 z-index 와 같은효과)
-//    관련 함수들 : Marker, InfoWindow, CustomOverlay 에 setZIndex(), getZIndex
+// => zIndex : z-index 속성값 (jQuery의 z-index와 같은효과)
+//    관련 함수들 : Marker, InfoWindow, CustomOverlay에 setZIndex(), getZIndex
 //              예) infowindow.setZIndex(3) , infowindow.getZIndex() 등       
 var infowindow = new kakao.maps.InfoWindow({ zIndex:1 });  
 
@@ -67,7 +67,7 @@ for (var i=0;i<positions.length;i++) {
 					// 마커에 마우스를 올리면 타이틀이 표시됨 -> 그러나 html 적용안됨
 			        image : markerImage // 마커 이미지 
 					});
-	// marker 에 이벤트 등록
+	// marker에 이벤트 등록
 	//alert('i='+i+' , content='+positions[i].content) ;
 	
 	/* // infoTest 1) 무조건 표시 : 마커에 표시할 인포윈도우 생성   
@@ -77,7 +77,7 @@ for (var i=0;i<positions.length;i++) {
    	infowindow.open(map,marker); */
 	
  	// infoTest 2) 마커에 mouseover, mouseout 이벤트 적용  
-  	// => 이벤트 리스너로는 mouseover: Opener 와  mouseout: Closer 를 만들어 등록 
+  	// => 이벤트 리스너로는 mouseover: Opener와  mouseout: Closer를 만들어 등록 
     var infoContent=positions[i].content ;
   	kakao.maps.event.addListener(marker,'mouseover',makeOverListener(map,marker,infowindow,infoContent));
   	kakao.maps.event.addListener(marker,'mouseout',makeOutListener(infowindow));
@@ -94,7 +94,7 @@ map.setBounds(bounds);
 // 인포윈도우를 표시하는 함수
 function makeOverListener(map,marker,infowindow,infoContent) {
 	return function() {
-		// 이때 infowindow 는 상단에 전역으로 정의 해 놓음
+		// 이때 infowindow 는 상단에 전역으로 정의해 놓음
 		infowindow.setContent(infoContent);
 		infowindow.open(map,marker);
 	};

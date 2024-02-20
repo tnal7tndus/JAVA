@@ -76,7 +76,7 @@
 		// 아래 코드는 지도 위의 마커를 제거하는 코드입니다
 		// marker.setMap(null);     
 	//--------------------------------------------------------------------------------------------------------------
-	//*** 	Geolocation API 사용하기
+	//*** Geolocation API 사용하기
 	//=> Geolocation API는 사용자의 현재 위치를 가져오는 API로, 
 	//   지도에 사용자 위치를 표시하는 등 다양한 용도로 사용할 수 있습니다.
 	//=> gps 정보 받아와서 내 위치에 마커 표시하기
@@ -166,7 +166,7 @@
 	var distance = polyline.getLength();
 	console.log("음식점과 나의 위치의 거리는 ="+distance+"m");
 	
-	//거리가 500m 이하일 때만 리뷰를 쓸 수 있게합니다.
+	//거리가 500m 이하일때만 리뷰를 쓸 수 있게합니다.
 	if (distance <= 500) {
 		document.getElementById("review").innerText = "리뷰 쓰기가 가능합니다.";
 	}else {

@@ -63,8 +63,8 @@ var geocoder = new kakao.maps.services.Geocoder();
 //경기 용인시 기흥구 민속촌로 90 : 용인 민속촌 
 //경기 성남시 분당구 돌마로 46 : 그린 컴퓨터아카데미, GreenComputer
 //경기 성남시 분당구 금곡동 167 이코노샤르망 5층 : 그린_별관, (이코노샤르망 5층) 
-var address = '경기 용인시 기흥구 민속촌로 90' ;
-var description = '용인 민속촌' ; // description: 설명, 묘사
+var address = '경기 성남시 분당구 돌마로 46' ;
+var description = 'GreenComputer' ; // description: 설명, 묘사
  
 // geocoder.addressSearch(address, function(result, status) { ..});
 geocoder.addressSearch(address, function(result, status) { 

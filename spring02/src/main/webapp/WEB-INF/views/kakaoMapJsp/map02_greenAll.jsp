@@ -35,7 +35,7 @@ var mapContainer = document.getElementById('map'), // 지도를 표시할 div
 var map = new kakao.maps.Map(mapContainer, mapOption); 
 
 // Test Data -> 주소와 Info
-// From DB Data -> json 형태로 전달되면 ${Lemon} 처럼 전달 가능
+// From DB Data -> json 형태로 전달되면 ${Lemon}처럼 전달 가능
 // var add=${Lemon};
 // var addrs = add;
 
@@ -61,18 +61,18 @@ var geocoder = new kakao.maps.services.Geocoder();
 
 // 지도의 중심좌표를 표시 위치에 따라 재설정 하기위한 bounds 생성	
 var bounds = new kakao.maps.LatLngBounds();	
-// lat : 위도(latitude) , lng [long] : 경도(longitude)
+// lat : 위도(latitude), lng [long] : 경도(longitude)
 // coordinate [coords] :  1.조직, 편성하다  2.(몸의 움직임을) 조정하다 
 //                        3.(옷차림가구 등) 꾸미다[코디하다], 잘 어울리다[조화되다]
 //                        4.수학 에서 좌표
 
 // 주소를 좌표로 전환하기 
-// => geocoder.addressSearch(...) 는 콜백함수를 사용하기 때문에 
+// => geocoder.addressSearch(...)는 콜백함수를 사용하기 때문에 
 //    배열 addrs가 addr 하나의 데이터 속성만 있다면 무관 하지만 
-//    위의 경우처럼 content 가 있는경우에는 이 content 값은 마지막 값만 볼수 있게 된다
+//    위의 경우처럼 content가 있는경우에는 이 content 값은 마지막 값만 볼수 있게 된다
 //    왜냐하면 반복문이 실행되는 동안 콜백 함수는 자신의 매개변수들을 차곡 차곡 보관해 놓고, 
-//    반복문이 종료되어 더이상 매개변수가 전달되지 않으면 하나씩 실행이 시작되는 구조 이기 때문에
-//    이 상황에서 i 는 마지막 값이고, content 역시 마지막 값이므로... 
+//    반복문이 종료되어 더이상 매개변수가 전달되지 않으면 하나씩 실행이 시작되는 구조이기 때문에
+//    이 상황에서 i는 마지막 값이고, content 역시 마지막 값이므로... 
 // => 해결은 여러가지가 있겠지만, 데이터의 구조와 특징에 따라 구현하는것이 좋을듯
 // => https://devtalk.kakao.com/t/addresssearch/44163/4
 
@@ -80,7 +80,7 @@ var total = addrs.length;
 var counter = 0;
 
 // Version01 -> i 대신 counter 변수를 사용하여 한번에 처리
-// => 오류 : JS 의 콜백함수는 비동기 실행 을 하기 때문에  일정 순서대로 실행되지 않기 때문에
+// => 오류 : JS의 콜백함수는 비동기 실행을 하기 때문에 일정 순서대로 실행되지 않기 때문에
 //          content 값의 순서와 다르다.
 // => 결론 : DB에 자료를 보관할때 주소와 좌표를 모두 보관해야 정확하게 info를 DB에서 읽어 표시할 수 있다. 
 for(var i=0; i<total; i++) {
