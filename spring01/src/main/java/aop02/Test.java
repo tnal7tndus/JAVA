@@ -18,7 +18,7 @@ public class Test {
 		try {
 			System.out.println("** Boy Test **");
 			programmerB.doStudying();
-			System.out.println("** Girl Test **");
+			System.out.println("\n ** Girl Test **");
 			programmerG.doStudying();
 		} catch (Exception e) {
 			System.out.println("\n ** main Exception =>" +e.toString());

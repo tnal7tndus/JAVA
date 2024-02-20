@@ -1,7 +1,5 @@
 package aop02;
 
-import java.util.Random;
-
 //** Aop 구현
 //	 1단계 : 핵심적 관심사항과 공통적 관심사항 분리
 //=> 핵심적 관심사항만 구현

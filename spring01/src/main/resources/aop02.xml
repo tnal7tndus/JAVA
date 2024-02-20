@@ -17,12 +17,10 @@
     -->
     
     <aop:config>
-    	<aop:aspect ref="MyAsp">
+    	<aop:aspect ref="myAsp">
     		<aop:pointcut expression="execution(void doStudying())" id="mypointcut"/>
     		<aop:around method="myAround" pointcut-ref="mypointcut"/>
     	</aop:aspect>
-    
-    
     </aop:config>
 
 </beans>

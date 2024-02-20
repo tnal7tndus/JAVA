@@ -1,7 +1,5 @@
 package aop02;
 
-import java.util.Random;
-
 public class Girl implements Programmer {
 	
 	@Override

@@ -35,7 +35,9 @@
 	<!-- **************************************************************************** -->	
 
 	<!-- JUnit Test
-		=> SpringDAO Test Bean 설정 : MemberDAO, MemberDTO  -->
+		=> SpringDAO Test Bean 설정 : MemberDAO, MemberDTO  
 	<bean class="com.ncs.spring02.model.MemberDAO" lazy-init="true"></bean>
 	<bean class="com.ncs.spring02.domain.MemberDTO" lazy-init="true"></bean> 
+-->
+
 </beans>

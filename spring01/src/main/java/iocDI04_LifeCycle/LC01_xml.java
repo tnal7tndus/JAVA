@@ -11,9 +11,9 @@ import org.springframework.context.support.GenericXmlApplicationContext;
 //=> xml에 해당 시점별 속성에 등록
 // 	 -> init-method="begin"  destroy-method="end" 
 //=> 실행순서 (생성 ........ 소멸) 
-// 생성자 -> init-method(생성직후 자동호출) ..... 
-//     	   -> 소멸(컨테이너 close) -> destroy-method(자동호출) 
-
+//	 생성자 -> init-method(생성직후 자동호출) ..... 
+//     		   -> 소멸(컨테이너 close) -> destroy-method(자동호출) 
+	
 class LifeCycle {
 	public LifeCycle() { System.out.println("~~ LifeCycle_Test Default 생성자 ~~"); }
 	public void begin() { System.out.println("~~ LifeCycle_Test begin() ~~"); }
@@ -21,7 +21,6 @@ class LifeCycle {
 	public void login() { System.out.println("~~ LifeCycle_Test login() ~~"); }
 	public void list() { System.out.println("~~ LifeCycle_Test list() ~~"); }
 } //LifeCycle
-
 
 public class LC01_xml {
 
@@ -31,12 +30,7 @@ public class LC01_xml {
 	      LifeCycle lc = (LifeCycle)sc.getBean("lc");
 	      lc.login();
 	      lc.list();
-	      
 	      sc.close();
-
-		
-		
-		
 	}//main
 
 }//class
