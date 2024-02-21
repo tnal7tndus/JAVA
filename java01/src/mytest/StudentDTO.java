@@ -1,5 +1,7 @@
 package mytest;
 
+import jdbc02.JoDTO;
+
 //** VO (Value Object)
 //=> 특정 비즈니스 값을 담은 객체로 값을 표현하기 위한용도
 //=> 불변객체 immutable object

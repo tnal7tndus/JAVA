@@ -81,7 +81,7 @@ public class StudentController {
 		sc.printDetail(dto2);
 		
 		// ** Join Test 
-		sc.printList(sc.service.joinList());    
+//		sc.printList(sc.service.joinList());    
 	} //main
 
 } //class
