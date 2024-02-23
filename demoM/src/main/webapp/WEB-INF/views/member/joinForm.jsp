@@ -235,7 +235,7 @@ function inCheck(){
 -->
 
 
-<form action="join" method="post" enctype="multipart/form-data">
+<form action="join" method="post" id="myform" enctype="multipart/form-data">
 <table>
 	<tr height="20">
 		<td bgcolor="MediumPurple"><label for="id">I  D</label></td>
@@ -317,7 +317,7 @@ function inCheck(){
 	
 	<tr><td></td>
 		<td><input type="submit" id="submitTag" value="가입" onclick="return inCheck()" disabled="disabled">&nbsp;&nbsp;
-		    <!-- => Tag 의 onclick 이벤트를 작성하고, onclick 이벤트핸들러가 가지고있던
+		    <!-- => Tag의 onclick 이벤트를 작성하고, onclick 이벤트핸들러가 가지고있던
                 	기본동작인 submit을 선택적으로 진행되도록 해준다. 
                 	- submit 진행 : default (또는 return true)
                 	- submit 정지 : submit 이벤트를 무효화 해야함 (return false 또는 이벤트.preventDefault())  -->	
@@ -325,14 +325,17 @@ function inCheck(){
 				<button type="submit" onclick="return inCheck()">ButtonTest</button>
 				<button type="button" onclick="inCheck()">ButtonTest2</button>
 		          ** Button Test
-	           		 => default : form 내부에서는  submit와  동일하게 작동됨 
+	           		 => default : form 내부에서는  submit와 동일하게 작동됨 
 	                    inCheck()의 return 값에 따라 (true 면) submit 진행됨 
 	           		 => 단, type 속성을 선택하면 (button, reset, submit 등) 속성에 맞게 실행됨
 	             		예) button을 선택하면 submit 은 실행되지않음
 	             	  ** Enter_Key : form 내부에서는 누르면 submit이 진행됨
 	             -->
              	  
-			<input type="reset" value="취소">
+			<input type="reset" value="취소">&nbsp;&nbsp;
+			<!-- Axios Join Test -->
+			<span class="textlink" onclick="axiJoin()">axiJoin</span>&nbsp;&nbsp;
+		</tr>
 		</td>
 	</tr>
 </table>

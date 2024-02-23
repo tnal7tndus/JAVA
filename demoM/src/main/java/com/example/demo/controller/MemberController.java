@@ -38,6 +38,15 @@ public class MemberController {
 	MemberService service;
 	PasswordEncoder passwordEncoder; // DemoConfig에 설정
 	JoService jservice;
+	
+	//** Axios_MemberList
+	@GetMapping("/aximlist")
+	public String axiMemberList(Model model) {
+		model.addAttribute("apple", service.selectList());
+		log.info("** axMemberList 성공 **");
+		return "axTest/axMemberList";
+	}
+	
 
 //** Member Check_List
 	@GetMapping("/mCheckList")
@@ -189,8 +198,10 @@ public class MemberController {
 	
 //** Join Form
 	@RequestMapping(value = "/joinForm", method=RequestMethod.GET)
-	public void joinForm() {
-		
+	public void joinForm(Model model) {
+		//=> joList에서 조목록 가져오기
+		// joinForm의 select에 적용
+//		model.addAttribute("apple",)
 	}//joinForm
 	
 	//** Join
