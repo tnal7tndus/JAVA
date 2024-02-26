@@ -154,8 +154,4 @@ public class PageMaker {
 		return this.mappingName+uriComponents.toString();
 	}//searchQuery
 	
-	
-	
-	
-	
 }//class

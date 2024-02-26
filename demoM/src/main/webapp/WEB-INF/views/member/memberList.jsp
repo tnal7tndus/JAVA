@@ -13,7 +13,7 @@
 <c:if test="${!empty requestScope.message}">
 => ${requestScope.message}<br><hr>
 </c:if>
-<table border="1" sytle="width:100%">
+<table border="1" style="width:100%">
 <tr bgcolor="Lime">
 	<th>ID</th><!-- <th>Password</th> --><th>Name</th><th>Age</th><th>Jno</th>
 	<th>Info</th><th>Point</th><th>Birthday</th><th>추천인</th><th>Image</th>				

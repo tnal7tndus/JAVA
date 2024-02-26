@@ -17,6 +17,12 @@ public class BoardServiceImpl implements BoardService {
 	//=> Mybatis 적용
 	BoardMapper mapper;
 	
+	//Ajax: id별 boardList 출력
+	@Override
+	public List<BoardDTO> idbList(String id) {
+		return mapper.idbList(id);
+	}
+	
 	//Board Check_List
 	@Override
 	public List<BoardDTO> bCheckList(SearchCriteria cri){

@@ -5,36 +5,22 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>** Member Page List **</title>
+<title>** Spring Boot Axios MemberPageList **</title>
 <script>
 "use strict"
-// 1. 검색조건 입력 후 버튼클릭
-// => 입력값들을 서버로 전송 요청 처리 : location
-function searchDB(){
-	self.location='mPageList'
-		        + '?currPage=1&rowsPerPage=5'
-		        +'&searchType='+document.getElementById('searchType').value
-		        +'&keyword='+document.getElementById('keyword').value;
-}
-// 2. searchType을 '전체'로 변경하면 keyword는 clear 
-function keywordlClear(){
-	if(document.getElementById('searchType').value=='all')
-		document.getElementById('keyword').value='';
-}
-//** Board Check_List
-function checkClear(){
-	
-	let ck=document.querySelectorAll('.clear');
-	for(let i=0; i<ck.length; i++){
-		ck[i].checked=false;
-	}
-	return false; //reset의 기본 이벤트 제거
-}//checkClear
-</script>
 
+// ** 검색 & 페이징 포함한 요청의 Ajax 처리
+// => Ajax 요청 function 작성, url을 매개변수로 전달 : axiMListCri(url) 
+// => Page 요청 : aTag -> span으로 변경하고 function 으로 처리 
+// => Check 검색은 submit을 사용하기 때문에 적용하지 않음(주석처리)
+
+// => Ajax 처리시에는 문서내부의 function이 인식 안되므로
+//    searchDB(), keywordClear() 모두 axTest03.js 에 작성  
+
+</script>
 </head>
 <body>
-<h2>** Member List **</h2>
+<h2>** Spring Boot Axios MemberPageList **</h2>
 <hr>
 <c:if test="${!empty requestScope.message}">${reuqestScope.message}<br><hr>
 </c:if>
@@ -69,15 +55,16 @@ function checkClear(){
          <c:if test="${jno=='7'}"> <c:set var="ck5" value="true" /> </c:if>
       </c:forEach>
       <!-- ------------------------------------------------------------------------ -->
-		<input type="checkbox" name="check" class="clear" value="1" ${ck1 ? 'checked' : ''}>Business&nbsp;
-		<input type="checkbox" name="check" class="clear" value="2" ${ck2 ? 'checked' : ''}>static&nbsp;
-		<input type="checkbox" name="check" class="clear" value="3" ${ck3 ? 'checked' : ''}>칭찬해조&nbsp;
-		<input type="checkbox" name="check" class="clear" value="4" ${ck4 ? 'checked' : ''}>카톡으로얘기하조&nbsp;
-		<input type="checkbox" name="check" class="clear" value="7" ${ck5 ? 'checked' : ''}>칠면조&nbsp;
-		<input type="submit" value="Search">&nbsp;
+		<input type="checkbox" name="check clear" value="1" ${ck1 ? 'checked' : ''}>Business&nbsp;
+		<input type="checkbox" name="check clear" value="2" ${ck2 ? 'checked' : ''}>static&nbsp;
+		<input type="checkbox" name="check clear" value="3" ${ck3 ? 'checked' : ''}>칭찬해조&nbsp;
+		<input type="checkbox" name="check clear" value="4" ${ck4 ? 'checked' : ''}>카톡으로얘기하조&nbsp;
+		<input type="checkbox" name="check clear" value="7" ${ck5 ? 'checked' : ''}>칠면조&nbsp;
+		<!-- <input type="submit" value="Search">&nbsp; -->
+		<button type="button" onclick="axiMListCheck()">Check</button>
 		<input type="reset" value="Clear" onclick="return checkClear()"> <br>
 	</form>
-	<hr>
+	<hr> 
 </div>
 
 <table border="1" sytle="width:100%">
@@ -109,8 +96,8 @@ function checkClear(){
 <!-- 1)Prev, First  -->
    <c:choose>
    		<c:when test="${pageMaker.prev && pageMaker.spageNo>1}">
-	   		<a href="${pageMaker.searchQuery(1)}">FP</a>&nbsp;
-   			<a href="${pageMaker.searchQuery(pageMaker.spageNo-1)}">&LT;</a>&nbsp;&nbsp;-->
+	   		<span class="textlink" onclick="axiMListCri('${pageMaker.searchQuery(1)}')">FP</span>&nbsp;
+	   		<span class="textlink" onclick="axiMListCri('${pageMaker.searchQuery(pageMaker.spageNo-1)}')">&LT;</span>&nbsp;
      	</c:when>
      	<c:otherwise>
      		<font color="gray">FP&nbsp;&LT;&nbsp;&nbsp;</font>
@@ -129,8 +116,8 @@ function checkClear(){
 <!-- 3) Next, LastPage  -->
 	<c:choose>
 		<c:when test="${pageMaker.next && pageMaker.epageNo>0}">
-			&nbsp;<a href="${pageMaker.searchQuery(pageMaker.epageNo+1)}">&GT;</a>
-			&nbsp;<a href="${pageMaker.searchQuery(pageMaker.lastPageNo)}">LP</a>
+	   		<span class="textlink" onclick="axiMListCri('${pageMaker.searchQuery(pageMaker.epageNo+1)}')">&GT;</span>&nbsp;
+	   		<span class="textlink" onclick="axiMListCri('${pageMaker.searchQuery(pageMaker.lastPageNo)}')">LP</span>&nbsp;
 		</c:when>
 		<c:otherwise>
 			<font color="gray">&nbsp;&GT;&nbsp;LP</font>

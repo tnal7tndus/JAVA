@@ -39,13 +39,47 @@ public class MemberController {
 	PasswordEncoder passwordEncoder; // DemoConfig에 설정
 	JoService jservice;
 	
+	//** Ajax Member_paging
+	//=> ver01 : "/axmcri"만 구현 (Search 구현만 구현)
+	//=> ver02 : "/axmchek" 요청도 처리할 수 있도록 구현
+	//			-> mappingName에 "check"가 포함되어 있으면 service를 아래 메서드를 호출하도록
+	//			   service.mCheckList(cri), mCheckRowsCount(cri)
+	@GetMapping({"/axmcri","/axmcheck"})
+	public String axmcri(HttpServletRequest request, Model model, SearchCriteria cri, PageMaker pageMaker){
+		//1) Criteria 처리
+		//=> currPage, rowsPerPage 값들은 Parameter로 전달되어 자동으로 cri에 set
+		cri.setSnoEno(); // sno 계산완료됨 -> Service
+		//2) 요청확인 * Service처리
+		String mappingName =
+				request.getRequestURI().substring(request.getRequestURI().lastIndexOf("/")+1);
+		System.out.println(request.getRequestURI());
+		pageMaker.setmappingName(mappingName);
+		pageMaker.setCri(cri);
+		
+		if(mappingName.contains("check")) {
+			//=> Check 조건처리
+			model.addAttribute("apple", service.mCheckList(cri));
+			pageMaker.setTotalRowsCount(service.mCheckRowsCount(cri)); //Check 조건별 rows 갯수
+		}else {
+			//=> Search 조건처리
+			model.addAttribute("apple", service.mSearchList(cri));
+			pageMaker.setTotalRowsCount(service.mtotalRowsCount(cri)); //Search 조건별 rows 갯수
+		}
+		
+		//3) View 처리 : PageMaker 필요
+		//=> 요청명을 url에 포함하기 위함
+		
+		model.addAttribute("pageMaker", pageMaker);
+		return "axTest/axmPageList";
+	}//axmcri
+	
 	//** Axios_MemberList
 	@GetMapping("/aximlist")
 	public String axiMemberList(Model model) {
 		model.addAttribute("apple", service.selectList());
 		log.info("** axMemberList 성공 **");
 		return "axTest/axMemberList";
-	}
+	}//aximlist
 	
 
 //** Member Check_List

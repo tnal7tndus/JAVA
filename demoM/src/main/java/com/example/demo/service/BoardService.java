@@ -2,12 +2,16 @@ package com.example.demo.service;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Select;
+
 import com.example.demo.domain.BoardDTO;
 
 import pageTest.SearchCriteria;
 
 public interface BoardService {
 	
+	//Ajax: id별 boardList 출력
+	public List<BoardDTO>idbList(String id);
 	
 	//Board Check_List
 	public List<BoardDTO> bCheckList(SearchCriteria cri);

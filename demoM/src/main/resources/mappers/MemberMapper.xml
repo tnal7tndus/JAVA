@@ -70,16 +70,15 @@
 
 	<!--  Board_Paging => MySql : Limit 구문 사용 ex) Limit a, b (a개를 제외하고 b개 : a+1부터 
 		b개) => Oracle : Between 사용 ex) Between a And b (a부터 b까지) -->
-	<!-- <select id="mPageList"
+	<select id="mPageList"
 		resultType="com.example.demo.domain.MemberDTO">
 		select * from member
-		where <include refid="search"></include>
 		order by jno
 		limit #{sno}, #{rowsPerPage}
 	</select>
 	<select id="totalRowsCount" resultType="int">
 		select count(*) from member
-	</select> --> 
+	</select>
 
 
 
