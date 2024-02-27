@@ -379,9 +379,9 @@ public class RESTController {
     }//idblist
     
     
-    @DeleteMapping("/axidelete/{ii}")
     //=> Parameter : @PathVariable
     //=> ResponseEntity : Contructor 사용 방식 적용
+    @DeleteMapping("/axidelete/{ii}")
     public ResponseEntity<?> axidelete(@PathVariable("ii") String id) {
 
     	if(service.delete(id)>0) {
@@ -394,6 +394,26 @@ public class RESTController {
     }//axidelete
     
     
+    //JoDetail
+    @GetMapping("/jodetail/{jno}")
+    public ResponseEntity<?> jodetail(@PathVariable("jno")String jno, JoDTO dto){
+    	
+    	// => dto 확인: parameter 와 같은 이름의 맴버변수가 있으면 자동으로 set 
+    	System.out.println("** jodetail dto => "+ dto);
+    	ResponseEntity<?>result=null;
+    	
+    	// => Service 처리
+    	dto = jservice.selectJoDetail(""+dto.getJno());
+    	// => 출력 Data 유/무 구별
+    	if(dto != null ) {
+    		result=ResponseEntity.status(HttpStatus.OK).body(dto);
+    		log.info("**joList HttpStatus.OK =>" +HttpStatus.OK);}
+    	else {
+    		result = ResponseEntity.status(HttpStatus.BAD_GATEWAY).body(" ~~ 출력할 자료가 없습니다 ~~ ");
+    		log.info("** joList HttpStatus.BAD_GATEWAY =>" +HttpStatus.BAD_GATEWAY);
+        	}
+    		return result;
+    	}//jodetail
     
     
 }//class
