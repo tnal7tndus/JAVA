@@ -13,8 +13,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
-
 @Entity
 //=> 해당클래스가 엔티티(테이블)를 위한 클래스이며, 
 //해당클래스의 인스턴스들은 JPA의 엔티티매니저가 관리하는 엔티티 객체임을 의미함. 
@@ -80,7 +78,4 @@ public class Member {
          - EnumType.STRING : 문자열로 저장 "val1, val2, val3" 
          - EnumType.ORDINAL: 인덱스가 저장 0 ~ 4
      */
-	
-	
-	
 }//class

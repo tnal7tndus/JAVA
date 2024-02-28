@@ -28,43 +28,43 @@ import pageTest.SearchCriteria;
 //	-> 즉, Java Interface, Mapper, Mapper의 namespace 값(패키지와 화일명)이 모두 동일해야함
 //	-> 그리고 해당 메서드는 Mapper의 xml 구문의 id 속성값으로 찾음
 
-@Service
-public class MemberServiceImpl implements MemberService {
-	//** 전역변수 정의
-	private final MemberRepository repository;
-	
-	
-	//** selectList
-	public List<Member> selectList(){
-		return repository.findAll();
-	}
-	
-	//** selectOne
-	public MemberDTO selectOne(String id) {
-		return repository.selectOne(id);
-	}
-	
-	//** insert
-	public int insert(MemberDTO dto) {
-		return repository.insert(dto);
-	}
-	//** update
-	public int update(MemberDTO dto) {
-		return repository.update(dto);
-	}
-	
-	//** Password_Update
-	public int pwUpdate(MemberDTO dto) {
-		return repository.pwUpdate(dto);
-	}
-	
-	//** delete
-	public int delete(String id) {
-		return repository.delete(id);
-	}
-	
-	//** selectJoList
-	public List<MemberDTO> selectJoList(String jno) {
-		return repository.selectJoList(jno);
-	}
-}
+//@Service
+//public class MemberServiceImpl implements MemberService {
+//	//** 전역변수 정의
+//	private final MemberRepository repository;
+//	
+//	
+//	//** selectList
+//	public List<Member> selectList(){
+//		return repository.findAll();
+//	}
+//	
+//	//** selectOne
+//	public MemberDTO selectOne(String id) {
+//		return repository.selectOne(id);
+//	}
+//	
+//	//** insert
+//	public int insert(MemberDTO dto) {
+//		return repository.insert(dto);
+//	}
+//	//** update
+//	public int update(MemberDTO dto) {
+//		return repository.update(dto);
+//	}
+//	
+//	//** Password_Update
+//	public int pwUpdate(MemberDTO dto) {
+//		return repository.pwUpdate(dto);
+//	}
+//	
+//	//** delete
+//	public int delete(String id) {
+//		return repository.delete(id);
+//	}
+//	
+//	//** selectJoList
+//	public List<MemberDTO> selectJoList(String jno) {
+//		return repository.selectJoList(jno);
+//	}
+//}
