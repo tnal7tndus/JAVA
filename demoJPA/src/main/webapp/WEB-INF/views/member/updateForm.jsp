@@ -96,8 +96,9 @@
 </table>
 </form>
 <br><hr>
-&nbsp;<a href="pwUpdate">비밀번호 수정</a>&nbsp;
+&nbsp;<a href="pwUpdate">비밀번호 수정</a><br>
 <c:if test="${!empty requestScope.message}">
+<hr>
 => ${requestScope.message}
 </c:if>
 <br><hr>

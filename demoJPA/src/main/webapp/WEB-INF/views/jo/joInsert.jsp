@@ -10,14 +10,13 @@
 <body>
 <h2>JO Insert Form</h2>
 
-<form action="Insert">
+<form action="insert">
 	Jno: <input type="text" name="jno" id="id"><br>
 	Jname: <input type="text" name="jname" id="jname"><br>
 	Captain: <input type="text" name="captain" id="captain"><br>
 	Project: <input type="text" name="project" id="project"><br>
 	Slogan: <input type="text" name="slogan" id="slogan"><br>
 	<button>등록</button>
-	
 </form>
 <br>
 <c:if test="${!empty requestScope.message}">

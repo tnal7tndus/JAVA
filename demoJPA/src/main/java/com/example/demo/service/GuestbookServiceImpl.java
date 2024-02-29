@@ -33,7 +33,6 @@ import lombok.extern.log4j.Log4j2;
 //   - deleteById(키) 삭제의 경우에도 select 후 없으면 ~~DataAccessException 발생시키고
 //     있으면 삭제하고 void로 정의되어 return 값 없음. 
 
-
 @Service
 @Log4j2
 @RequiredArgsConstructor

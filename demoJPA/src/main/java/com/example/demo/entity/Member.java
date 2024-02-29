@@ -62,7 +62,7 @@ public class Member {
 	private String rid; //추천인
 	private String uploadfile; //Table 보관용(File_Name)
 	
-	@Transient	//SQL 구문 처리시 제외시켜줌
+	@Transient	//SQL 구문 처리시 제외시켜줌 (Form으로부터 가져오는)
 	private MultipartFile uploadfilef;
     /*
      @Temporal(TemporalType.TIMESTAMP)

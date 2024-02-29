@@ -45,9 +45,9 @@
 </c:if>
 <br><hr>
 
-&nbsp;<a href="joInsert?jno=${requestScope.apple.jno }">조등록</a>&nbsp;
-&nbsp;<a href="joUpdate?jno=${requestScope.apple.jno}">조수정</a>&nbsp;
-&nbsp;<a href="joDelete?jno=${requestScope.apple.jno}">조삭제</a>&nbsp;
+&nbsp;<a href="joInsert">조등록</a>&nbsp;
+&nbsp;<a href="Update?jno=${requestScope.apple.jno}">조수정</a>&nbsp;
+&nbsp;<a href="Delete?jno=${requestScope.apple.jno}">조삭제</a>&nbsp;
 <br><hr>
 &nbsp;<a href="/spring02/home">HOME</a>&nbsp;
 &nbsp;<a href="javascript:history.go(-1)">이전으로</a>&nbsp;

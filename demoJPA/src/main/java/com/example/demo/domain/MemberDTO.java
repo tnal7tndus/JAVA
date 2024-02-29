@@ -86,10 +86,10 @@ import lombok.NoArgsConstructor;
 @Data
 //=> 정의된 모든 필드에 대한 
 //Getter, Setter, ToString 과 같은 모든 요소를 한번에 만들어주는 애너테이션
-public class MemberDTO {
+public class MemberDTO extends JoDTO {
 	
 	//1) private 멤버변수
-	private String id; //Primary_Key
+	private String id; // Primary_Key
 	private String password; // not null
 	private String name;
 	private int age;
@@ -98,17 +98,20 @@ public class MemberDTO {
 	private double point;
 	private String birthday;
 	private String rid; //추천인
-	private String uploadfile; //Table 보관용(File_Name)
+	private String uploadfile; // Table 보관용(File_Name)
 	
-	private MultipartFile uploadfilef;
-	//=> form의 Upload_File의 정보를 전달받기 위한 용도(컬럼)
-	//	-> MultipartFile (i) -> CommonsMultipartFile
-	//	-> pom.xml에 dependency 추가
-	//	-> 구현체 CommonsMultipartFile 생성(servlet~.xml)
+	private	MultipartFile uploadfilef;
 	
-	
-	//2) getter/setter	
-	//3) toString 오버라이딩
+	// => Join 구문결과 받기위해서는 
+	//	  select 구문의 순서와 동일하게 모든 컬럼을 초기화하는 생성자 필요함. 
+	//    default 생성자도 필수사항 임을 주의.
+	public MemberDTO(String id, String name, int jno, String jname, String project) {
+		this.id = id;
+		this.name = name;
+		this.jno = jno;
+		super.jname = jname;	// JoDTO에서 private을 protected로 변경
+		super.project = project;	// JoDTO에서 private을 protected로 변경
+	}
 	
 	
 }//class

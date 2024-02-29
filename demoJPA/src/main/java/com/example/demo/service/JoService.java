@@ -2,23 +2,26 @@ package com.example.demo.service;
 
 import java.util.List;
 
-import com.example.demo.domain.JoDTO;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import com.example.demo.entity.Jo;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+
+import lombok.RequiredArgsConstructor;
 
 public interface JoService {
 	
 	//**selectJoList
-	public List<JoDTO> selectJoList();
+	public List<Jo> selectJoList();
 	
 	//**selectJoDetail
-	public JoDTO selectJoDetail(String jno);
+	public Jo selectJoDetail(int jno);
 	
-	//**insert
-	public int insert(JoDTO dto);
+	//**insert, update
+	public Jo save(Jo entity);
 	
-	//**update
-	public int update(JoDTO dto);
 	
-//	**delete
-	public int delete(String jno);
+	//**delete
+	public void delete(int jno);
 }

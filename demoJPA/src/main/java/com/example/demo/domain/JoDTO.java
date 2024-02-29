@@ -10,9 +10,9 @@ import lombok.NoArgsConstructor;
 public class JoDTO{
 	//** private으로 멤버변수 정의
 	private int jno;
-	private String jname;
+	protected String jname;	//MemberDTO에서 사용하기 위해 protected로 변경
 	private String captain;
-	private String project;
+	protected String project;	//MemberDTO에서 사용하기 위해 protected로 변경
 	private String slogan;
 //	private String uploadfile;
 
