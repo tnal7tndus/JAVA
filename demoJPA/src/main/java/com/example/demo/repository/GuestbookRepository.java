@@ -31,6 +31,7 @@ import com.example.demo.entity.Guestbook;
 
 //=> JpaRepository의 save()메서드 동작원리
 //  - 새로운 entity이면 persist()를 아니면 merge()를 호출
+//	  아니면 EntityManager의 merge()를 호출
 
 public interface GuestbookRepository
 					extends JpaRepository<Guestbook, Long>{

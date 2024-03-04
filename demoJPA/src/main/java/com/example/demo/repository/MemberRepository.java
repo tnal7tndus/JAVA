@@ -34,7 +34,7 @@ import com.example.demo.entity.Member;
 //   List<Member> findbySearchId(String keyword);   
 //   -> List 형식 return의 경우에도 findby~~~   
 //
-//=> 가능하면 @Query("...") 보다는 Method 규약을 이용하는것이 작업량을 줄일수 있으므로 권장됨.
+//=> 가능하면 @Query("...") 보다는 Method 규약을 이용하는것이 작업량을 줄일 수 있으므로 권장됨.
 //  ( JPA자체가 반복적인 작업량을 줄이기 위해 나온 것이니 만큼... ) 
 
 //=> 다양한 사용예시 https://blog.naver.com/mion0602/223183393956
@@ -74,7 +74,7 @@ import com.example.demo.entity.Member;
 //3) JPA Criteria Query(객체지향 쿼리 빌더)
 //=> JPQL Query Builder Class
 //=> JPQL을 자바 코드로 작성하도록 도와주는 빌더 클래스 API
-//  자바코드로 JPQL을 작성할 수 있도록 도와주는 JPQL의 빌더 역할이라고 보면됨.
+//   자바코드로 JPQL을 작성할 수 있도록 도와주는 JPQL의 빌더 역할이라고 보면됨.
 //=> 장점: 자바코드이므로 오타가 나면 컴파일 오류가 난다. 동적 코드 가능
 //=> 단점: 유지보수가 너무 어렵다. (본인의 코드도 나중에 다시 보면 이해하기 힘들다.)     
 //=> 그러므로 QueryDSL 사용을 권장.
@@ -93,8 +93,8 @@ import com.example.demo.entity.Member;
 
 //=> 방법
 //	- 프로젝트 내의 @Entity 어노테이션을 선언한 클래스를 탐색하고, 
-//  JPAAnnotationProcessor를 사용해 Q 클래스를 생성.
-//  ( pom.xml의 설정을 통해 자동실행,  QueryDSL사용법.txt 메모장 참고)    
+//    JPAAnnotationProcessor를 사용해 Q 클래스를 생성.
+//    ( pom.xml의 설정을 통해 자동실행,  QueryDSL사용법.txt 메모장 참고)    
 //	- Q클래스 파일에 접근해서 DB 작업
 //  - QueryDSL로 쿼리를 작성할때 Q클래스를 사용함으로써쿼리를 Type-Safe하게 작성할 수 있음.
 
@@ -106,7 +106,7 @@ import com.example.demo.entity.Member;
 //   즉, JPA에서 지원하는 기본 쿼리문들은 모두 flush()처리를 해주지만, 
 //   JDBC를 직접사용하는 경우에는 직접 flush()를 해야함.
 
-//** JPQL 의 Fetch Join
+//** JPQL의 Fetch Join
 //=> JPQL에서 성능 최적화를 위해 제공하는 기능이다.
 //=> 연관된 엔티티나 컬렉션을 SQL한번에 함께 조회 가능하며
 //	 일반 Join 구문이 2단계로 처리되는것에 비하여 한번에 로딩함. 
@@ -114,7 +114,7 @@ import com.example.demo.entity.Member;
 //=> [ LEFT [OUTER] | INNER ] JOIN FETCH 조인경로
 //=> JPQL 예시
 //	 select m from Member m join fetch m.jno
-//=> SQL 과 비교
+//=> SQL과 비교
 //	 SELECT m.*, j.* FROM member m INNER JOIN jo j ON m.jno=j.jno
 //
 //=> Fetch Join의 한계
@@ -138,7 +138,6 @@ import com.example.demo.entity.Member;
 
 public interface MemberRepository extends JpaRepository<Member, String> {
 	
-
 	// 1) JPARepository Method Naming 규약
 	// => jno별 Member 출력
 	List<Member> findByJno(int jno);

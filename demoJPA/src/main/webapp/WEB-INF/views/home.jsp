@@ -51,6 +51,12 @@
 &nbsp;<a href ="/ginsert">GInsert</a>&nbsp;
 &nbsp;<a href ="/glist">GList</a>&nbsp;
 &nbsp;<a href ="/gupdate">GUpdate</a>&nbsp;
-&nbsp;<a href ="/gpage">GPage</a>&nbsp;
+&nbsp;<a href ="/gpage">GPage</a><br>
+&nbsp;<a href="/tinsert">TSave</a>&nbsp; 
+&nbsp;<a href="/tupdate">TUpdate</a>&nbsp; 
+&nbsp;<a href="/tdupupdate">TDupUpdate</a>&nbsp; 
+&nbsp;<a href="/tcalcCount">TCalc</a>&nbsp; 
+&nbsp;<a href="/testlist">TList</a>&nbsp; 
+
 </body>
 </html>
