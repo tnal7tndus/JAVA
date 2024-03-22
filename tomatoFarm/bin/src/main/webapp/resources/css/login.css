@@ -1,0 +1,168 @@
+#logo {
+    height: 80px;
+    position: relative;
+    top: 30px;
+    left: 35%;
+    margin: auto;
+    display: inline-block;
+}
+
+#errorBox {
+    width: 350px;
+    font-size: 12px;
+    padding-left: 5px;
+    color: #9B1B30;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+body {
+    background-image: url(/tomatoFarmA/resources/img/signup/signupBGI.jpg);
+    background-size: 120%;
+    background-position: -350px;
+    background-position-y: -400px;
+    height: 100vh;
+}
+
+/* ======================================== */
+
+#bodyBG {
+    position: absolute;
+    width: 600px;
+    height: 100%;
+    background-color: #67111f;
+    z-index: -1;
+    right: 0;
+}
+
+/* ======================================== */
+main {
+    right: calc((600px - 500px) / 2);
+    position: absolute;
+    border-radius: 40px;
+    width: 500px;
+    height: 470px;
+    margin: auto;
+    display: block;
+    background-color: white;
+    top: calc((100vh - 500px) / 2);
+}
+
+input:focus {
+    outline: none;
+}
+
+#loginBox {
+    margin: auto;
+    margin-top: 90px;
+    position: relative;
+    width: 350px;
+
+}
+
+#loginBox>#loginButton {
+    text-align: center;
+    font-weight: 500;
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    border: none;
+    display: flex;
+}
+
+#loginButton>div {
+    width: 50%;
+    line-height: 40px;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+#loginButton>div:nth-of-type(1) {
+    border-top-left-radius: 10px;
+    border-left: 1px solid #564f45;
+    border-top: 1px solid #564f45;
+    background-color: #9B1B30;
+    color: white;
+}
+
+#loginButton>div:nth-of-type(2) {
+    border-top-right-radius: 10px;
+    border: 1px solid #564f45;
+}
+
+#loginBox>div {
+    border: 1px solid #564f45;
+    width: 350px;
+    margin: auto;
+    line-height: 50px;
+    font-size: 18px;
+}
+
+
+#loginBox>#idBox {
+    border-bottom: 0.5px solid #564f45;
+    border-top: none;
+}
+
+#loginBox>#passwordBox {
+    border-top: 0.5px solid #564f45;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+#loginBox>div>i {
+    width: 50px;
+    text-align: center;
+    font-size: 16px;
+    opacity: 0.3;
+}
+
+#loginBox>div>input {
+    border: none;
+    width: 280px;
+
+}
+
+#loginInBox {
+    margin: auto;
+    width: 350px;
+    height: 40px;
+    font-size: 20px;
+    background-color: #9B1B30;
+    color: white;
+    margin-top: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#search {
+    list-style: none;
+    display: flex;
+    margin: auto;
+    width: 300px;
+    padding: 10px;
+    font-size: 12px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+#search>li {
+    width: 100px;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#successOrNot {
+    width: 350px;
+    margin: auto;
+    font-size: 12px;
+    padding-left: 5px;
+    color: #9B1B30;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-indent: inherit;
+}

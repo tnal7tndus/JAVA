@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 폰트어썸 -->
+    <script src="https://kit.fontawesome.com/d68045e863.js" crossorigin="anonymous"></script>
+    <!-- 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- 기본 CSS, JS -->
+    <link rel="stylesheet" href="../resources/css/00default.css">
+    <script defer src="...resources/js/00default.js"></script>
+    <!-- 헤더 CSS, JS -->
+    <link rel="stylesheet" href="...resources/css/00header.css">
+    <script defer src="../resources/js/00header.js"></script>
+    <!-- 페이지 CSS, JS -->
+    <link rel="stylesheet" href="../resources/css/itemDetail.css">
+    <script defer src="../resources/js/itemDetail.js"></script>
+    <title>토마토팜 || 제품</title>
+</head>
+
+<body>
+    <header id="topBar">
+        <div id="loginBar">
+            <div class="container">
+                <a href="">고객센터</a>
+                &nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="">로그인</a>
+                &nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="">회원가입</a>
+            </div>
+        </div>
+
+        <div id="searchBar">
+            <div class="container">
+                <div id="logoBox">
+                    <a href="/">
+                        <img src="../resources/img/logo.png" alt="">
+                        <h1>토마토팜 tomatoFarm</h1>
+                    </a>
+                </div>
+                <form id="searchBox">
+                    <input oninput="appearinputBoxResetButton(this)" id="searchBoxInput" type="text"
+                        placeholder="검색어를 입력해주세요.">
+                    <i onclick="resetInputBox(this)" class="fa-solid fa-circle-xmark"></i>
+                    <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+                <div id="searchRightBox">
+                    <div id="myPage">
+                        <a href="/"><i class="fa-solid fa-user"></i></a>
+                    </div>
+                    <div id="myCart">
+                        <a href="/"><i class="fa-solid fa-cart-shopping"></i></a>
+                    </div>
+                    <div id="myItem">
+                        <a href="/"><i class="fa-solid fa-box-archive"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <nav>
+            <div class="container">
+                <div id="categoryBox">
+                    <div onmouseover="firstCategoryVisible()" id="categoryTag"><i
+                            class="fa-solid fa-bars"></i>&nbsp;&nbsp;&nbsp;카테고리</div>
+                    <ul onmouseout="firstCategoryHidden()" onmouseover="firstCategoryVisible()" id="firstCategory">
+                        <li></li>
+                        <li id="firstCategorySearch">
+                            <div>
+                                <input onkeyup="seachCategory(this)" oninput="appearinputBoxResetButton2(this)"
+                                    type="text"><i onclick="resetInputBox2(this)" class="fa-solid fa-circle-xmark"></i>
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </div>
+                        </li>
+                        <li><a href="item/list?keyword=밀키트"><img src="../resources/img/category_mealkit.png"
+                                    alt="category_mealkit">밀키트</a></li>
+                        <li><a href="item/list?keyword=건강식품"><img src="../resources/img/식A.png" alt="건강식품">건강식품</a></li>
+                        <li><a href="item/list?keyword=계육"><img src="../resources/img/식B.png" alt="계육">계육</a>
+                        </li>
+                        <li><a href="item/list?keyword=농산가공"><img src="../resources/img/식C.png" alt="농산가공">농산가공</a></li>
+                        <li><a href="item/list?keyword=돈육"><img src="../resources/img/식D.png" alt="돈육">돈육</a>
+                        </li>
+                        <li><a href="item/list?keyword=면류"><img src="../resources/img/식E.png" alt="면류">면류</a>
+                        </li>
+                        <li><a href="item/list?keyword=분말류"><img src="../resources/img/식F.png" alt="분말류">분말류</a></li>
+                        <li><a href="item/list?keyword=생활용품"><img src="../resources/img/식G.png" alt="생활용품">생활용품</a></li>
+                        <li><a href="item/list?keyword=세제류"><img src="../resources/img/식H.png" alt="세제류">세제류</a></li>
+                        <li><a href="item/list?keyword=수산가공"><img src="../resources/img/식I.png" alt="수산가공">수산가공</a></li>
+                        <li><a href="item/list?keyword=야채"><img src="../resources/img/식J.png" alt="야채">야채</a>
+                        </li>
+                        <li><a href="item/list?keyword=양곡류"><img src="../resources/img/식K.png" alt="양곡류">양곡류</a></li>
+                        <li><a href="item/list?keyword=양육"><img src="../resources/img/식L.png" alt="양육">양육</a>
+                        </li>
+                        <li><a href="item/list?keyword=어패류"><img src="../resources/img/식M.png" alt="어패류">어패류</a></li>
+                        <li><a href="item/list?keyword=우육"><img src="../resources/img/식N.png" alt="우육">우육</a>
+                        </li>
+                        <li><a href="item/list?keyword=유제품"><img src="../resources/img/식O.png" alt="유제품">유제품</a></li>
+                        <li><a href="item/list?keyword=유지류"><img src="../resources/img/식P.png" alt="유지류">유지류</a></li>
+                        <li><a href="item/list?keyword=음료차"><img src="../resources/img/식Q.png" alt="음료차">음료차</a></li>
+                        <li><a href="item/list?keyword=일반가공"><img src="../resources/img/식R.png" alt="일반가공">일반가공</a></li>
+                        <li><a href="item/list?keyword=제과"><img src="../resources/img/식S.png" alt="제과">제과</a>
+                        </li>
+                        <li><a href="item/list?keyword=조리식품"><img src="../resources/img/식T.png" alt="조리식품">조리식품</a></li>
+                        <li><a href="item/list?keyword=조미식품"><img src="../resources/img/식U.png" alt="조미식품">조미식품</a></li>
+                        <li><a href="item/list?keyword=청과"><img src="../resources/img/식V.png" alt="청과">청과</a>
+                        </li>
+                        <li><a href="item/list?keyword=축산가공"><img src="../resources/img/식W.png" alt="축산가공">축산가공</a></li>
+                        <li><a href="item/list?keyword=포장용품"><img src="../resources/img/식X.png" alt="포장용품">포장용품</a></li>
+                        <li><a href="item/list?keyword=해조류"><img src="../resources/img/식Y.png" alt="해조류">해조류</a></li>
+                    </ul>
+                    <ul onmouseout="firstCategoryHidden()" onmouseover="firstCategoryVisible()" id="secondCategory">
+                        <li></li>
+                        <li id="secondCategorySearch">
+                            <div>
+                                <input onkeyup="seachCategory(this)" oninput="appearinputBoxResetButton2(this)"
+                                    type="text"><i onclick="resetInputBox2(this)" class="fa-solid fa-circle-xmark"></i>
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </div>
+                        </li>
+                        <li><a href="">채소</a></li>
+                        <li>과일ㆍ견과ㆍ쌀</li>
+                        <li>수산ㆍ해산ㆍ건어물</li>
+                        <li>정육ㆍ가공육ㆍ계란</li>
+                        <li>국ㆍ반찬ㆍ메인요리</li>
+                        <li>간편식ㆍ밀키트ㆍ샐러드</li>
+                        <li>면ㆍ양념ㆍ오일</li>
+                        <li>생수ㆍ음료ㆍ커피</li>
+                        <li>간식ㆍ과자ㆍ떡</li>
+                        <li>베이커리</li>
+                        <li>유제품</li>
+
+                    </ul>
+                </div>
+                <ul id="navBar">
+                    <li><a href="">밀키트 주문</a></li>
+                    <li><a href="">식단 주문</a></li>
+                    <li><a href="">재료 주문</a></li>
+                    <li><a href="">이벤트</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main id="itemDetailBox" class="container">
+        <div id="imgBox">
+            <div id="imgBoxImg">
+                <img src="../resources/img/itemImg/5000100_1.jpg" alt="소고기 찹스테이크 사진">
+            </div>
+            <div id="imgBoxImgList">
+                <div onclick="changeMainImg(event)"><img src="../resources/img/itemImg/5000100_1.jpg" alt="소고기 찹스테이크 조리">
+                </div>
+                <div onclick="changeMainImg(event)"><img src="../resources/img/itemImg/5000100_2.jpg" alt="소고기 찹스테이크 제품">
+                </div>
+                <div onclick="changeMainImg(event)"><img src="../resources/img/itemImg/5000100_3.jpg" alt="소고기 찹스테이크 구성품">
+                </div>
+                <div onclick="changeMainImg(event)"><img src="../resources/img/itemImg/5000100_4.jpg"
+                        alt="소고기 찹스테이크 상세표기"></div>
+            </div>
+        </div>
+
+        <div id="itemDetail">
+            <div id="itemDetailTitle">
+                <div id="itemDelivery">배송</div>
+                <div id="itemName">소고기 찹스테이크</div>
+                <div id="itemAccount">소고기 찹스테이크 신선하고 맛있어요</div>
+
+                <span id="itemSale">10<span>%</span></span>
+                <div id="itemPrice">16110원</div>
+                <div id="itemSalePrice">14499.0원</div>
+
+
+            </div>
+            <div>배송</div>
+
+            <div>3500원<br>(23시 전 주문 시 내일 아침 7시 전 도착)</div>
+
+
+            <div>제조사</div>
+            <div>프레시지</div>
+            <div>포장타입</div>
+            <div>냉동</div>
+            <div>판매단위</div>
+
+            <div>1팩</div>
+
+
+            <div>중량/용량</div>
+            <div>527g</div>
+            <div>유통기한</div>
+            <div>수령일 포함 180일 이상 남은 제품을 보내드립니다.</div>
+            <div id="itemSelect">
+                <div>수량 선택</div>
+                <div id="countBox">
+                    <button onclick='count(event,"-")'><i class="fa-solid fa-minus"></i></button>
+                    <input onkeydown="inputCount(event)" id="inputCount" type="text" value="1">
+                    <button onclick='count(event,"+")'><i class="fa-solid fa-plus"></i></button>
+                </div>
+                <div id="priceBox">
+                    <div id="price">총 상품금액&nbsp; : &nbsp;<span>30000원</span></div>
+                    <a href="" id="cart">장바구니 담기</a>
+                    <a href="" id="buy">구매하기</a>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+    <ul id="detailClick" class="container">
+        <li id="detailButton"><a onclick="return showItemDetail(this)" href="#introItem1">상품설명</a></li>
+        <li><a onclick="return confirm('aa')" href="#introItem2">상세정보</a></li>
+        <li><a href="#reviewBoardBox">상품후기</a></li>
+        <li><a href="#askBoardBox">상품문의</a></li>
+    </ul>
+    <div id="introItem" class="container">
+
+        <div id="introItem1" class="subTitle">
+            <hr>
+            <h4>상품 조리 사진
+                <img src="../resources/img/logo3.png" alt="제품 조리 사진">
+            </h4>
+            <hr>
+        </div>
+        <img src="../resources/img/itemImg/5000100_2.jpg" alt="소고기 찹스테이크 제품">
+        <div id="introItem2" class="subTitle">
+            <hr>
+            <h4>상품 구성
+                <img src="../resources/img/logo4.png" alt="상품 구성">
+            </h4>
+            <hr>
+        </div>
+        <img src="../resources/img/itemImg/5000100_3.jpg" alt="소고기 찹스테이크 구성품">
+        <div class="subTitle">
+            <hr>
+            <h4>상품 표시사항
+                <img src="../resources/img/logo2.png" alt="제품 조리 사진">
+            </h4>
+            <hr>
+        </div>
+        <img src="../resources/img/itemImg/5000100_4.jpg" alt="소고기 찹스테이크 상세표기">
+    </div>
+    <div onclick="showItemDetail(this)" id="introItemBtn" class="container">
+        상품정보 더보기
+        <i class="fa-solid fa-chevron-down"></i>
+        <div></div>
+    </div>
+    <hr>
+    <div id="reviewBoardBox" class="container appearContainer">
+        <h5>상품후기</h5>
+        <span>한줄리뷰 - 제목을 클릭하시면 상세내용을 보실 수 있습니다.</span>
+        <div id="reviewBoard">
+            <div class="reviewBoardRow">
+                <div>별점</div>
+                <div>제목</div>
+                <div>작성자</div>
+                <div>작성일</div>
+            </div>
+            <div onclick="showContent(this)" class="reviewContent">
+                <div class="reviewDetail">
+                    <div onclick="reviewDetailClick(this)" id="reivewImg">
+                        <img src="../resources/img/itemImg/5000001_2.jpg" alt="">
+                        <img src="../resources/img/itemImg/5000001_1.jpg" alt="">
+                    </div>
+                    <b>가성비 굳</b>
+                    <p>내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용
+                    </p>
+                </div>
+                <div>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half"></i>
+                </div>
+                <div>가성비 굳</div>
+                <div>작성자3</div>
+                <div>작성일4</div>
+            </div>
+            <div onclick="showContent(this)" class="reviewContent">
+                <div class="reviewDetail">
+                    <div>
+                        <img src="../resources/img/itemImg/5000001_2.jpg" alt="">
+                        <img src="../resources/img/itemImg/5000001_1.jpg" alt="">
+                    </div>
+                    <b>가성비 굳</b>
+                    <p>내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용
+                    </p>
+                </div>
+                <div>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half"></i>
+                </div>
+                <div>가성비 굳</div>
+                <div>작성자3</div>
+                <div>작성일4</div>
+            </div>
+            <div onclick="showContent(this)" class="reviewContent">
+                <div class="reviewDetail">
+                    <div>
+                        <img src="../resources/img/itemImg/5000001_2.jpg" alt="">
+                        <img src="../resources/img/itemImg/5000001_1.jpg" alt="">
+                    </div>
+                    <b>가성비 굳</b>
+                    <p>내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용
+                    </p>
+                </div>
+                <div>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half"></i>
+                </div>
+                <div>가성비 굳</div>
+                <div>작성자3</div>
+                <div>작성일4</div>
+            </div>
+            <div onclick="showContent(this)" class="reviewContent">
+                <div class="reviewDetail">
+                    <div>
+                        <img src="../resources/img/itemImg/5000001_2.jpg" alt="">
+                        <img src="../resources/img/itemImg/5000001_1.jpg" alt="">
+                    </div>
+                    <b>가성비 굳</b>
+                    <p>내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용
+                    </p>
+                </div>
+                <div>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half"></i>
+                </div>
+                <div>가성비 굳</div>
+                <div>작성자3</div>
+                <div>작성일4</div>
+            </div>
+            <div onclick="showContent(this)" class="reviewContent">
+                <div class="reviewDetail">
+                    <div>
+                        <img src="../resources/img/itemImg/5000001_2.jpg" alt="">
+                        <img src="../resources/img/itemImg/5000001_1.jpg" alt="">
+                    </div>
+                    <b>가성비 굳</b>
+                    <p>내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용
+                    </p>
+                </div>
+                <div>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half"></i>
+                </div>
+                <div>가성비 굳</div>
+                <div>작성자3</div>
+                <div>작성일4</div>
+            </div>
+        </div>
+        <div id="reviewBoardBtn">
+            <i class="fa-solid fa-angles-left"></i>
+            <i class="fa-solid fa-angle-left"></i>
+            <span> 1 </span>
+            <span> 2 </span>
+            <span> 3 </span>
+            <i class="fa-solid fa-angle-right"></i>
+            <i class="fa-solid fa-angles-right"></i>
+        </div>
+    </div>
+    <hr>
+    <div id="askBoardBox" class="container appearContainer">
+        <h5>상품문의</h5>
+        <span>상품문의 - 상품에 궁금하신점을 남겨주세요.</span>
+        <a href=""> 문의하기 </a>
+        <div id="askBoard">
+            <div class="boardRow">
+                <div></div>
+                <div>답변</div>
+                <div>제목</div>
+                <div>작성자</div>
+                <div>작성일</div>
+            </div>
+            <div onclick="showContent(this)" class="boardRow">
+                <div class="askContents">
+                    내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용
+                    <a>답변</a>
+                    <a>삭제</a>
+                </div>
+                <div>미답변</div>
+                <div>제목</div>
+                <div>작성자</div>
+                <div>작성일</div>
+            </div>
+            <div onclick="showContent(this)" class="boardRow">
+                <div class="askContents">
+                    내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용
+                    <a>답변</a>
+                    <a>삭제</a>
+                </div>
+                <div>답변완료</div>
+                <div>제목2</div>
+                <div>작성자3</div>
+                <div>작성일4</div>
+            </div>
+            <div onclick="showContent(this)" class="boardRow">
+                <div class="askContents">
+                    내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용
+                    <a>답변</a>
+                    <a>삭제</a>
+                </div>
+                <div>답변완료</div>
+                <div>제목2</div>
+                <div>작성자3</div>
+                <div>작성일4</div>
+            </div>
+            <div onclick="showContent(this)" class="boardRow">
+                <div class="askContents">
+                    내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용
+                    <a>답변</a>
+                    <a>삭제</a>
+                </div>
+                <div><i class="fa-solid fa-lock"></i></div>
+                <div>
+                    <span>&nbsp;┗&nbsp; Re : </span>
+                    제목2
+                </div>
+                <div>작성자3</div>
+                <div>작성일4</div>
+            </div>
+            <div onclick="showContent(this)" class="boardRow">
+                <div class="askContents">
+                    내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용
+                    <a>답변</a>
+                    <a>삭제</a>
+                </div>
+                <div><i class="fa-solid fa-lock"></i></div>
+                <div>제목2</div>
+                <div>작성자3</div>
+                <div>작성일4</div>
+            </div>
+        </div>
+        <div id="askBoardBtn">
+            <i class="fa-solid fa-angles-left"></i>
+            <i class="fa-solid fa-angle-left"></i>
+            <span> 1 </span>
+            <span> 2 </span>
+            <span> 3 </span>
+            <i class="fa-solid fa-angle-right"></i>
+            <i class="fa-solid fa-angles-right"></i>
+        </div>
+    </div>
+    <div onclick="reviewDetailClick(event)" id="reviewDetailForm">
+        <div id="reviewDetailBox">
+            <div id="reviewDetailImg">
+                <div id="reviewDetailImgTop">
+                    <img src="../resources/img/itemImg/5000001_2.jpg" alt="">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+                <div id="reviewDetailImgBottom">
+                    <img onclick="reivewDetailImgChange(this)" src="../resources/img/itemImg/5000001_1.jpg" alt="">
+                    <img onclick="reivewDetailImgChange(this)" src="../resources/img/itemImg/5000001_2.jpg" alt="">
+                </div>
+            </div>
+            <div id="reviewDetail_Write">
+                <p>구매상품 이름</p>
+                <p>작성자 아이디</p>
+                <p>작성 날짜</p>
+                <p id="reviewDetail_Final">후기다 후기다 후기다
+                    후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다
+                    후기다 후기다
+                    후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다후기다
+                </p>
+            </div>
+            <div onclick="reviewDetailClose(this)" id="reviewDetailBoxClose"><i class="fa-solid fa-xmark"></i></div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,118 @@
+#logo {
+    height: 80px;
+    position: relative;
+    top: 30px;
+    left: 35%;
+    margin: auto;
+    display: inline-block;
+}
+
+main {
+    position: relative;
+    border: 1px solid black;
+    width: 500px;
+    height: 800px;
+    margin: auto;
+    display: block;
+}
+
+h3 {
+    text-align: center;
+    font-size: 15px;
+    font-weight: 500;
+    background-color: #564f45;
+    color: white;
+    width: 130px;
+    height: 30px;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    position: relative;
+    margin: 70px 0px 1px 70px;
+}
+
+input:focus {
+    outline: none;
+}
+
+#idFindBox {
+    margin: auto;
+    margin-top: 20px;
+    position: relative;
+}
+
+#idFindBox>div {
+    border: 1px solid #4C4556;
+    width: 350px;
+    margin: auto;
+    line-height: 50px;
+    font-size: 18px;
+}
+
+#idFindBox>#emailBox {
+    border-radius: 10px;
+    width: 350px;
+    height: 50px;
+}
+
+#idFindBox>div>i {
+    width: 50px;
+    text-align: center;
+    font-size: 16px;
+}
+
+#idFindBox>div>input {
+    border: none;
+    width: 280px;
+}
+
+span{
+    color: gray;
+    border: 500;
+    margin: auto;
+    width: 350px;
+    padding: 5px;
+    display: block;
+    font-size: 10px;
+}
+
+#sendBox {
+    width: 350px;
+    height: 50px;
+    padding: 0;
+    margin: auto;
+    font-size: 20px;
+    display: block;
+    text-align: center;
+}
+
+#sendBox button {
+    width: 150px;
+    height: 40px;
+    font-size: 17px;
+    background-color: #9B1B30;
+    color: white;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+#search {
+    list-style: none;
+    display: flex;
+    margin: auto;
+    width: 300px;
+    padding: 10px;
+    font-size: 12px;
+    margin-top: 20px;
+}
+
+#search>li {
+    width: 100px;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

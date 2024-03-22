@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 폰트어썸 -->
+    <script src="https://kit.fontawesome.com/d68045e863.js" crossorigin="anonymous"></script>
+    <!-- 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- 기본 CSS, JS -->
+    <link rel="stylesheet" href="/tomatoFarmA/resources/css/00default.css">
+    <script defer src="/tomatoFarmA/resources/js/00default.js"></script>
+    <!-- 헤더 CSS, JS -->
+    <link rel="stylesheet" href="/tomatoFarmA/resources/css/00header.css">
+    <script defer src="/tomatoFarmA/resources/js/00header.js"></script>
+    <!-- 페이지 CSS, JS -->
+    <link rel="stylesheet" href="/tomatoFarmA/resources/css/shopBasket.css">
+    <script defer src="/tomatoFarmA/resources/js/shopBasket.js"></script>
+    <title>토마토팜 || 제품</title>
+</head>
+
+<body>
+    <header id="topBar">
+        <div id="loginBar">
+            <div class="container">
+                <a href="">고객센터</a>
+                &nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="">로그인</a>
+                &nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="">회원가입</a>
+            </div>
+        </div>
+
+        <div id="searchBar">
+            <div class="container">
+                <div id="logoBox">
+                    <a href="/tomatoFarmA/">
+                        <img src="/tomatoFarmA/resources/img/logo.png" alt="">
+                        <h1>토마토팜 tomatoFarm</h1>
+                    </a>
+                </div>
+                <form id="searchBox">
+                    <input oninput="appearinputBoxResetButton(this)" id="searchBoxInput" type="text"
+                        placeholder="검색어를 입력해주세요.">
+                    <i onclick="resetInputBox(this)" class="fa-solid fa-circle-xmark"></i>
+                    <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+                <div id="searchRightBox">
+                    <div id="myPage">
+                        <a href="/tomatoFarmA/"><i class="fa-solid fa-user"></i></a>
+                    </div>
+                    <div id="myCart">
+                        <a href="/tomatoFarmA/"><i class="fa-solid fa-cart-shopping"></i></a>
+                    </div>
+                    <div id="myItem">
+                        <a href="/tomatoFarmA/"><i class="fa-solid fa-box-archive"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <nav>
+            <div class="container">
+                <div id="categoryBox">
+                    <div onmouseover="firstCategoryVisible()" id="categoryTag"><i
+                            class="fa-solid fa-bars"></i>&nbsp;&nbsp;&nbsp;카테고리</div>
+                    <ul onmouseout="firstCategoryHidden()" onmouseover="firstCategoryVisible()" id="firstCategory">
+                        <li></li>
+                        <li id="firstCategorySearch">
+                            <div>
+                                <input onkeyup="seachCategory(this)" oninput="appearinputBoxResetButton2(this)"
+                                    type="text"><i onclick="resetInputBox2(this)" class="fa-solid fa-circle-xmark"></i>
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </div>
+                        </li>
+                        <li><a href="item/list?keyword=밀키트"><img src="/tomatoFarmA/resources/img/category_mealkit.png"
+                                    alt="category_mealkit">밀키트</a></li>
+                        <li><a href="item/list?keyword=건강식품"><img src="/tomatoFarmA/resources/img/식A.png"
+                                    alt="건강식품">건강식품</a></li>
+                        <li><a href="item/list?keyword=계육"><img src="/tomatoFarmA/resources/img/식B.png" alt="계육">계육</a>
+                        </li>
+                        <li><a href="item/list?keyword=농산가공"><img src="/tomatoFarmA/resources/img/식C.png"
+                                    alt="농산가공">농산가공</a></li>
+                        <li><a href="item/list?keyword=돈육"><img src="/tomatoFarmA/resources/img/식D.png" alt="돈육">돈육</a>
+                        </li>
+                        <li><a href="item/list?keyword=면류"><img src="/tomatoFarmA/resources/img/식E.png" alt="면류">면류</a>
+                        </li>
+                        <li><a href="item/list?keyword=분말류"><img src="/tomatoFarmA/resources/img/식F.png"
+                                    alt="분말류">분말류</a></li>
+                        <li><a href="item/list?keyword=생활용품"><img src="/tomatoFarmA/resources/img/식G.png"
+                                    alt="생활용품">생활용품</a></li>
+                        <li><a href="item/list?keyword=세제류"><img src="/tomatoFarmA/resources/img/식H.png"
+                                    alt="세제류">세제류</a></li>
+                        <li><a href="item/list?keyword=수산가공"><img src="/tomatoFarmA/resources/img/식I.png"
+                                    alt="수산가공">수산가공</a></li>
+                        <li><a href="item/list?keyword=야채"><img src="/tomatoFarmA/resources/img/식J.png" alt="야채">야채</a>
+                        </li>
+                        <li><a href="item/list?keyword=양곡류"><img src="/tomatoFarmA/resources/img/식K.png"
+                                    alt="양곡류">양곡류</a></li>
+                        <li><a href="item/list?keyword=양육"><img src="/tomatoFarmA/resources/img/식L.png" alt="양육">양육</a>
+                        </li>
+                        <li><a href="item/list?keyword=어패류"><img src="/tomatoFarmA/resources/img/식M.png"
+                                    alt="어패류">어패류</a></li>
+                        <li><a href="item/list?keyword=우육"><img src="/tomatoFarmA/resources/img/식N.png" alt="우육">우육</a>
+                        </li>
+                        <li><a href="item/list?keyword=유제품"><img src="/tomatoFarmA/resources/img/식O.png"
+                                    alt="유제품">유제품</a></li>
+                        <li><a href="item/list?keyword=유지류"><img src="/tomatoFarmA/resources/img/식P.png"
+                                    alt="유지류">유지류</a></li>
+                        <li><a href="item/list?keyword=음료차"><img src="/tomatoFarmA/resources/img/식Q.png"
+                                    alt="음료차">음료차</a></li>
+                        <li><a href="item/list?keyword=일반가공"><img src="/tomatoFarmA/resources/img/식R.png"
+                                    alt="일반가공">일반가공</a></li>
+                        <li><a href="item/list?keyword=제과"><img src="/tomatoFarmA/resources/img/식S.png" alt="제과">제과</a>
+                        </li>
+                        <li><a href="item/list?keyword=조리식품"><img src="/tomatoFarmA/resources/img/식T.png"
+                                    alt="조리식품">조리식품</a></li>
+                        <li><a href="item/list?keyword=조미식품"><img src="/tomatoFarmA/resources/img/식U.png"
+                                    alt="조미식품">조미식품</a></li>
+                        <li><a href="item/list?keyword=청과"><img src="/tomatoFarmA/resources/img/식V.png" alt="청과">청과</a>
+                        </li>
+                        <li><a href="item/list?keyword=축산가공"><img src="/tomatoFarmA/resources/img/식W.png"
+                                    alt="축산가공">축산가공</a></li>
+                        <li><a href="item/list?keyword=포장용품"><img src="/tomatoFarmA/resources/img/식X.png"
+                                    alt="포장용품">포장용품</a></li>
+                        <li><a href="item/list?keyword=해조류"><img src="/tomatoFarmA/resources/img/식Y.png"
+                                    alt="해조류">해조류</a></li>
+                    </ul>
+                    <ul onmouseout="firstCategoryHidden()" onmouseover="firstCategoryVisible()" id="secondCategory">
+                        <li></li>
+                        <li id="secondCategorySearch">
+                            <div>
+                                <input onkeyup="seachCategory(this)" oninput="appearinputBoxResetButton2(this)"
+                                    type="text"><i onclick="resetInputBox2(this)" class="fa-solid fa-circle-xmark"></i>
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </div>
+                        </li>
+                        <li><a href="">채소</a></li>
+                        <li>과일ㆍ견과ㆍ쌀</li>
+                        <li>수산ㆍ해산ㆍ건어물</li>
+                        <li>정육ㆍ가공육ㆍ계란</li>
+                        <li>국ㆍ반찬ㆍ메인요리</li>
+                        <li>간편식ㆍ밀키트ㆍ샐러드</li>
+                        <li>면ㆍ양념ㆍ오일</li>
+                        <li>생수ㆍ음료ㆍ커피</li>
+                        <li>간식ㆍ과자ㆍ떡</li>
+                        <li>베이커리</li>
+                        <li>유제품</li>
+
+                    </ul>
+                </div>
+                <ul id="navBar">
+                    <li><a href="">밀키트 주문</a></li>
+                    <li><a href="">식단 주문</a></li>
+                    <li><a href="">재료 주문</a></li>
+                    <li><a href="">이벤트</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <h3>
+                <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
+                장바구니
+                <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
+            </h3>
+            <div id="shopBasketSelectBox">
+                <ul id="shopBasketSelect">
+                    <li><input type="checkbox"></input></li>
+                    <li>전체선택</li>
+                    <li><input type="checkbox"></input></li>
+                    <li>전체삭제</li>
+                </ul>
+            </div>
+            <div id="shopBasketItemBox">
+                <div>
+                    <ul id="shopBasketItemBoxTitle">
+                        <li >선택</li>
+                        <li>상품정보</li>
+                        <li>수량</li>
+                        <li>총 상품금액</li>
+                        <li>배송비</li>
+                    </ul>
+                    <div class="shopBasketItem">
+                        <div><input class="check" type="checkbox" onclick="calc()" name="buy"></input></div>
+                        <div class="shopBasketItemImg"><img src="/tomatoFarmA/resources/img/itemImg/5000001_2.jpg" alt=""></div>
+                        <div class="shopBasketItemIfo">상품이름 - 샤브샤브
+                            <div class="price">상품가격:5000</div>
+                        </div>
+                        <div id="itemCount">
+                            <button onclick='count(event,"-")'><i class="fa-solid fa-minus"></i></button>
+                            <input onkeydown="inputCount(event)" id="inputCount" type="text" value="1">
+                            <button onclick='count(event,"+")'><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                        <div class="sumPrice">5000</div>
+                        <div>무료배송</div>
+                    </div>
+                    <div class="shopBasketItem">
+                        <div><input type="checkbox"></input></div>
+                        <div class="shopBasketItemImg"><img src="/tomatoFarmA/resources/img/itemImg/5000001_2.jpg" alt=""></div>
+                        <div class="shopBasketItemIfo">상품이름 - 샤브샤브
+                            <div class="price">상품가격:5000</div>
+                        </div>
+                        <div id="itemCount">
+                            <button onclick='count(event,"-")'><i class="fa-solid fa-minus"></i></button>
+                            <input onkeydown="inputCount(event)" id="inputCount" type="text" value="1">
+                            <button onclick='count(event,"+")'><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                        <div class="sumPrice">5000</div>
+                        <div>무료배송</div>
+                    </div>
+                    <div class="shopBasketItem">
+                        <div><input type="checkbox"></input></div>
+                        <div class="shopBasketItemImg"><img src="/tomatoFarmA/resources/img/itemImg/5000001_2.jpg" alt=""></div>
+                        <div class="shopBasketItemIfo">상품이름 - 샤브샤브
+                            <div class="price">상품가격:5000</div>
+                        </div>
+                        <div id="itemCount">
+                            <button onclick='count(event,"-")'><i class="fa-solid fa-minus"></i></button>
+                            <input onkeydown="inputCount(event)" id="inputCount" type="text" value="1">
+                            <button onclick='count(event,"+")'><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                        <div class="sumPrice">5000</div>
+                        <div>무료배송</div>
+                    </div>
+                    <div class="shopBasketItem">
+                        <div><input type="checkbox"></input></div>
+                        <div class="shopBasketItemImg"><img src="/tomatoFarmA/resources/img/itemImg/5000001_2.jpg" alt=""></div>
+                        <div class="shopBasketItemIfo">상품이름 - 샤브샤브
+                            <div class="price">상품가격:5000</div>
+                        </div>
+                        <div id="itemCount">
+                            <button onclick='count(event,"-")'><i class="fa-solid fa-minus"></i></button>
+                            <input onkeydown="inputCount(event)" id="inputCount" type="text" value="1">
+                            <button onclick='count(event,"+")'><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                        <div class="sumPrice">5000</div>
+                        <div>무료배송</div>
+                    </div>
+                    <div class="shopBasketItem">
+                        <div><input type="checkbox"></input></div>
+                        <div class="shopBasketItemImg"><img src="/tomatoFarmA/resources/img/itemImg/5000001_2.jpg" alt=""></div>
+                        <div class="shopBasketItemIfo">상품이름 - 샤브샤브
+                            <div class="price">상품가격:5000</div>
+                        </div>
+                        <div id="itemCount">
+                            <button onclick='count(event,"-")'><i class="fa-solid fa-minus"></i></button>
+                            <input onkeydown="inputCount(event)" id="inputCount" type="text" value="1">
+                            <button onclick='count(event,"+")'><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                        <div class="sumPrice">5000</div>
+                        <div>무료배송</div>
+                    </div>
+                </div>
+            </div>
+            <div id="shopBasketPayContainer">
+                <div id="shopBasketPayBox">
+                    <div id="shopBasketPrice">
+                        <div>상품금액
+                            <div>5000원</div>
+                        </div>
+                        <div>상품할인금액
+                            <div>10%할인</div>
+                        </div>
+                        <div>배송비
+                            <div>무료배송</div>
+                        </div>
+                        <div>결제예정금액
+                            <div>4500원</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="loginBox">로그인</div>
+                <div id="shopBasketCancel">
+                    <div>* [주문완료] 상태일 경우에만 주문 취소 가능합니다.</div>
+                    <div>* [마이페이지] -> [주문내역 상세페이지]에서 직접 취소 가능합니다.</div>
+                </div>
+            </div>
+
+            <div id="bestItemTitle">추천상품</div>
+            <div id="bestItemContainer">
+                <div id="containerOption"></div>
+                <a href="detail?code=5000001">
+                    <div class="itemBox">
+                        <img src="/tomatoFarmA/resources/img/itemImg/5000001_1.jpg" alt="샤브샤브밀키트">
+                        <div class="itemName">샤브샤브밀키트</div>
+                        <div class="itemInfo">채선당<br></div>
+                        <p class="itemPrice">15980원</p>
+                        <div class="itemOption">무료배송</div>
+                    </div>
+                </a>
+                <a href="detail?code=5000002">
+                    <div class="itemBox">
+                        <img src="/tomatoFarmA/resources/img/itemImg/5000002_1.jpg" alt="월남쌈 밀키트">
+                        <div class="itemName">월남쌈 밀키트</div>
+                        <div class="itemInfo">도리깨침<br></div>
+                        <p class="itemPrice">21200원</p>
+                        <div class="itemOption">무료배송</div>
+                    </div>
+                </a>
+                <a href="detail?code=5000003">
+                    <div class="itemBox">
+                        <img src="/tomatoFarmA/resources/img/itemImg/5000003_1.jpg" alt="두부된장찌개 밀키트">
+                        <div class="itemName">두부된장찌개 밀키트</div>
+                        <div class="itemInfo">김구원선생<br></div>
+                        <p class="itemPrice">6700원</p>
+                        <div class="itemOption">무료배송</div>
+                    </div>
+                </a>
+                <a href="detail?code=5000004">
+                    <div class="itemBox">
+                        <img src="/tomatoFarmA/resources/img/itemImg/5000004_1.jpg" alt="강릉식짬뽕순두부 밀키트">
+                        <div class="itemName">강릉식짬뽕순두부 밀키트</div>
+                        <div class="itemInfo">바른식<br></div>
+                        <p class="itemPrice">6675원</p>
+                        <div class="itemOption">무료배송</div>
+                    </div>
+                </a>
+            </div>
+    </main>
+
+
+
+
+
+</body>
+
+</html>

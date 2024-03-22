@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+/* ======================================= */
+
+#annTopBox {
+    display: flex;
+    justify-content: space-between;
+    background-color: #9B1B20;
+    line-height: 80px;
+    font-size: 34px;
+    color: white;
+    border-radius: 20px 20px;
+    margin-top: 30px;
+}
+
+#annTopBox>div:nth-of-type(1) {
+    text-indent: 50px;
+}
+
+#annTopBox>div:nth-of-type(1)>span {
+    font-size: 13px;
+}
+
+#writingBox {
+    box-shadow: 0 0 10px #9B1B20;
+    padding: 20px;
+    margin: 30px 0;
+}
+
+#writingBox>input:nth-of-type(1) {
+    width: 100%;
+    margin-top: 20px;
+}
+
+#writingBox>textarea {
+    display: block;
+    width: 100%;
+    margin: 20px 0;
+}
+
+
+#writingBox>div>select {
+    width: 20%;
+    text-indent: 10px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+#writingBox>div>select:not(:nth-of-type(1)) {
+    display: none;
+}
+
+#uploadFile {
+    margin-bottom: 20px;
+    color: #9B1B20;
+}
+
+#writingBox>div:last-of-type>input {
+    width: 80px;
+    padding: 10px;
+    background-color: #9B1B20;
+    color: white;
+    margin-right: 10px;
+}
+
+#writingBox>div:last-of-type>input:first-child {
+    background-color: grey;
+}
+

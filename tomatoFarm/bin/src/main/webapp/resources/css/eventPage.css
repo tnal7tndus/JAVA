@@ -1,0 +1,425 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'ChosunCentennial';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/ChosunCentennial.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'KBO-Dia-Gothic_bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/KBO-Dia-Gothic_bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+#keywordListDesign {
+    width: 150px;
+    height: 50px;
+    border-radius: 20px;
+    background-color: rgba(128, 128, 128, 0.188);
+    position: absolute;
+    top: 64px;
+    left: 1200px;
+    /* right: 1530px; */
+    line-height: 50px;
+    overflow: hidden;
+    font-weight: bold;
+}
+
+#keywordListDesign>div {
+    position: relative;
+    height: 100%;
+}
+
+#keywordListDesign a {
+    text-decoration: none;
+}
+
+#keywordListDesign>div>ul {
+    list-style: none;
+}
+
+#keywordListDesign>div>ul>li {
+    position: absolute;
+    top: -50px;
+}
+
+#keywordListDesign>div>ul>.prev {
+    top: 50px;
+    transition: top 0.3s ease;
+}
+
+#keywordListDesign>div>ul>.current {
+    top: 0;
+    transition: top 0.3s ease;
+}
+
+#keywordListDesign>div>ul>.next {
+    top: -50px;
+}
+
+
+#eventPageTop {
+    background-image: url(/tomatoFarmA/resources/img/jyhTest/topTest.png);
+    background-repeat: no-repeat;
+    background-position-y: -140px;
+    background-position-x: -50px;
+    background-size: 120%;
+    height: 400px;
+    margin: 20px auto;
+    position: relative;
+}
+
+#eventPageTop>div {
+    padding-left: 50px;
+    padding-top: 50px;
+    font-family: 'East Sea Dokdo', sans-serif;
+    /* 여기 폰트패밀리가 인식 X -> 하위 요소에 모두 줘야하는 문제 */
+}
+
+#eventPageTop>div>p:nth-of-type(1) {
+    font-size: 70px;
+    font-family: 'East Sea Dokdo', sans-serif;
+}
+
+#eventPageTop>div>p:nth-of-type(2) {
+    font-size: 50px;
+    font-family: 'East Sea Dokdo', sans-serif;
+}
+
+#eventPageTop>div>p>span {
+    color: #872642;
+    text-decoration: overline;
+    font-family: 'East Sea Dokdo', sans-serif;
+}
+
+#eventPageTop>div>span {
+    font-size: 30px;
+    font-family: 'East Sea Dokdo', sans-serif;
+}
+
+#eventPageTop>a {
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+    width: 300px;
+    font-size: 24px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 25px;
+    color: white;
+    background-color: #9B1B20;
+}
+
+#eventDetail1_1 {
+    height: 750px;
+    background-image: url(/tomatoFarmA/resources/img/jyhTest/event1.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    margin-top: 50px;
+}
+
+#eventDetail1_1>div:nth-of-type(1) {
+    width: 600px;
+    text-align: center;
+    font-family: 'East Sea Dokdo', sans-serif;
+    position: absolute;
+    left: calc((100% - 600px) / 2);
+    top: 150px;
+}
+
+
+#eventDetail1_1>div:nth-of-type(1)>div {
+    font-size: 100px;
+    font-family: 'East Sea Dokdo', sans-serif;
+}
+
+#eventDetail1_1>div:nth-of-type(1)>span {
+    font-family: 'East Sea Dokdo', sans-serif;
+    font-size: 34px;
+}
+
+
+#eventDetail1_1>div>p {
+    font-size: 20px;
+    font-family: 'KBO-Dia-Gothic_bold';
+}
+
+
+.rlarndnjsCoupon {
+    position: absolute;
+    width: 420px;
+    left: calc((100% - 420px) / 2);
+    bottom: 90px;
+    transition: 1s;
+    bottom: 50px;
+}
+
+
+
+.rlarndnjsCoupon>div {
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+    height: 170px;
+    margin-top: 10px;
+}
+
+.rlarndnjsCoupon>div>div {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    padding: 20px;
+    background-color: white;
+}
+
+.rlarndnjsCoupon>div>div>p {
+    text-align: center;
+    font-weight: 700;
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.rlarndnjsCoupon>div>div>p>span {
+    font-size: 20px;
+}
+
+.rlarndnjsCoupon>div>a {
+    writing-mode: vertical-lr;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    line-height: 70px;
+    background-color: #9B1B20;
+}
+
+/* ======================================= */
+
+
+#timePlace {
+    width: 600px;
+    display: flex;
+    gap: 30px;
+    font-family: 'ChosunCentennial';
+    position: absolute;
+    left: calc((100% - 600px) / 2);
+    top: 38px;
+
+}
+
+#timePlace>div {
+    font-size: 70px;
+    width: 25%;
+    text-align: center;
+}
+
+#timePlace>div>span {
+    font-size: 25px;
+}
+
+/* ======================================= */
+#eventDetail1_2 {
+    margin-top: 50px;
+    display: grid;
+    grid-template-rows: repeat(4, 200px);
+    gap: 10px;
+}
+
+#eventDetail1_2>div {
+    border: 10px solid;
+    border-radius: 20px;
+    padding: 30px;
+}
+
+#eventDetail1_2>div>h2 {
+    margin-bottom: 20px;
+}
+
+#eventDetail1_2>div ul {
+    list-style-type: disc;
+}
+
+#eventDetail1_2>div:nth-of-type(1) {
+    border-color: #F2CF8A;
+    background-color: #f2cf8a1c;
+}
+
+#eventDetail1_2>div:nth-of-type(2) {
+    border-color: #aec5aacc;
+    background-color: #aec5aa21;
+}
+
+#eventDetail1_2>div:nth-of-type(3) {
+    border-color: #EF7601;
+    background-color: #ef740121;
+}
+
+#eventDetail1_2>div:nth-of-type(4) {
+    border-color: #9B1B20;
+    background-color: #9b1b1f38;
+}
+
+#eventItemListBox {
+    margin-top: 50px;
+    position: relative;
+}
+
+/* #brandItemTab {
+    display: flex;
+}
+
+#brandItemTab>div {
+    border: 1px solid rgba(128, 128, 128, 0.349);
+    width: 33.333%;
+    text-align: center;
+    font-size: 20px;
+    padding: 10px;
+    border-bottom: none;
+} */
+
+#brandItemTab {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 30px;
+    height: 50px;
+}
+
+#brandItemTab>div {
+    border: 1px solid rgba(128, 128, 128, 0.342);
+    border-radius: 20px;
+    font-size: 20px;
+    padding: 10px;
+}
+
+#brandItemTab>div:hover {
+    background-color: #9B1B20;
+    color: white;
+    font-weight: bold;
+}
+
+#breandItemBox {
+    position: relative;
+    width: 1200px;
+    overflow: hidden;
+    display: flex;
+}
+
+/* 
+
+
+.nextList {
+    top: 0;
+    right: -1220px;
+    transition: left 0.5s ease;
+    position: absolute;
+}
+
+.prevList {
+    top: 0;
+    left: -1220px;
+    transition: left 0.5s ease;
+    position: absolute;
+
+}
+ */
+
+
+
+
+
+#eventItemListBox>span {
+    position: absolute;
+    width: 50px;
+    line-height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 25px;
+    top: calc((620px - 50px) / 2 + 80px);
+}
+
+#prevBt {
+    left: -70px;
+}
+
+#nextBt {
+    right: -70px;
+}
+
+#eventItemListBox>span:hover {
+    background-color: rgba(128, 128, 128, 0.384);
+    border: none;
+}
+
+
+
+/* ========================================= */
+
+.brandItemList {
+    display: grid;
+    grid-template: repeat(2, 300px) / repeat(2, 590px);
+    gap: 20px;
+    /* position: absolute; */
+}
+
+
+.brandItemList>a {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    border: 1px solid rgba(128, 128, 128, 0.342);
+}
+
+.brandItemList>a>img {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+}
+
+.brandItemList>a>div {
+    padding: 20px;
+}
+
+.brandItemList>a>div>span {
+    border-radius: 10px;
+    background-color: #F2CF8A;
+    padding: 5px;
+    font-weight: bold;
+}
+
+
+.brandItemList>a>div>p:nth-of-type(1) {
+    padding: 2px;
+    font-weight: bold;
+    color: #872642;
+    font-size: 13px;
+    /* margin: 20px 0; */
+    margin-top: 20px;
+    margin-bottom: 5px;
+    text-indent: 5px;
+}
+
+.brandItemList>a>div>p:nth-of-type(2) {
+    font-size: 22px;
+    margin-top: 15px;
+}
+
+.brandItemList>a>div>p:nth-of-type(3) {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.brandItemList>a>div>p:nth-of-type(4) {
+    font-size: 14px;
+    text-decoration: line-through;
+    color: rgba(128, 128, 128, 0.459);
+}
+
+/* ========================================= */

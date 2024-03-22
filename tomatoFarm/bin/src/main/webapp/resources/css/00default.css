@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    font-family: 'Noto Sans KR', sans-serif;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+body {
+    margin: 0;
+    box-sizing: border-box;
+    position: relative;
+}
+
+main {
+    display: flex;
+}
+
+hr {
+    margin-top: 50px;
+    border-top: 0.5px solid #4C455630;
+}
+
+button {
+    background-color: none;
+    padding: 0;
+    border: none;
+}
+
+.container {
+    width: calc(100vw - 30px);
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.hide {
+    visibility: hidden !important;
+    margin-top: 200px !important;
+    opacity: 0;
+}
+
+.appear {
+    box-shadow: 0px 0px 10px 4px #00000020;
+}
+
+.appear>div:nth-child(1) {
+    opacity: 1;
+    display: block;
+}

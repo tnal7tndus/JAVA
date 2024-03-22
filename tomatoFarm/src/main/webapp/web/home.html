@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- 폰트어썸 -->
+    <script src="https://kit.fontawesome.com/d68045e863.js" crossorigin="anonymous"></script>
+    <!-- 구글 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- 기본 CSS, JS -->
+    <link rel="stylesheet" href="../resources/css/00default.css">
+    <script defer src="../resources/js/00default.js"></script>
+    <!-- 헤더 CSS, JS -->
+    <link rel="stylesheet" href="../resources/css/00header.css">
+    <script defer src="../resources/js/00header.js"></script>
+    <!-- 페이지 CSS, JS -->
+    <link rel="stylesheet" href="../resources/css/home.css">
+    <script defer src="../resources/js/home.js"></script>
+    <!-- itemBox CSS, JS -->
+    <script defer src="../resources/js/itemBox.js"></script>
+    <!-- list CSS -->
+    <link rel="stylesheet" href="../resources/css/itemBox.css">
+    <link rel="stylesheet" href="../resources/css/itemList.css">
+    <link rel="stylesheet" href="../resources/css/itemDetail.css">
+    <link rel="stylesheet" href="../resources/css/login.css">
+    <script defer src="../resources/js/itemList.js"></script>
+
+    <!-- commandPage Test css -->
+    <link rel="stylesheet" href="../resources/css/orderPage.css">
+
+    <title>토마토팜 || 메인</title>
+</head>
+
+<body>
+    <header id="topBar">
+
+    </header>
+
+    <main id="main">
+        <div id="adImgBox">
+            <div id="adImg" class="container">
+                <img src="../resources/img/adimg/fresheasy.jpg" alt="">
+                <div id="adRightTab">
+                    <div onmouseover="changeAdImgBox(this,event)">프레시지<img src="../resources/img/brand/프레시지.png"
+                            alt="프레시지로고"></div>
+                    <div onmouseover="changeAdImgBox(this,event)">MyChef<img src="../resources/img/brand/마이셰프.png"
+                            alt="마이셰프로고"></div>
+                    <div onmouseover="changeAdImgBox(this,event)">회원가입쿠폰<img src="../resources/img/adimg/coupon.jpg"
+                            alt="마이셰프로고"></div>
+                    <div onmouseover="changeAdImgBox(this,event)">후기이벤트<img src="../resources/img/adimg/review.png"
+                            alt="마이셰프로고"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="firstContainer" class="container">
+            <h3><i class="fa-solid fa-star"></i>&nbsp;&nbsp; 토마토팜 바로가기 &nbsp;&nbsp;<i class="fa-solid fa-star"></i></h3>
+            <div id="firstContainerButton">
+                <div><a><img src="../resources/img/index_bestSeller.png" alt="베스트 상품" class="categoryImg"><br>베스트 상품</a>
+                </div>
+                <div onclick="changePageToList('밀키트')"><a><img src="../resources/img/index_mealkit.png" alt="밀키트"
+                            class="categoryImg"><br>밀키트</a></div>
+                <div><a><img src="../resources/img/index_food.png" alt="신선 재료" class="categoryImg"><br>신선 재료</a></div>
+                <div><a><img src="../resources/img/index_menu.png" alt="메뉴 주문" class="categoryImg"><br>메뉴 주문</a></div>
+                <div><a><img src="../resources/img/index_cooking.png" alt="조리 도구" class="categoryImg"><br>조리 도구</a>
+                </div>
+                <div><a><img src="../resources/img/index_gift.png" alt="이벤트" class="categoryImg"><br>이벤트</a></div>
+            </div>
+        </div>
+
+        <hr>
+
+        <div id="secondContainer" class="container">
+            <h3><i class="fa-solid fa-gift"></i> &nbsp;&nbsp;특가 상품&nbsp;&nbsp; <i class="fa-solid fa-gift"></i></h3>
+        </div>
+
+        <hr>
+
+        <div id="thirdContainer" class="container hide">
+            <h3 class="hide"><i class="fa-solid fa-bag-shopping"></i> &nbsp;&nbsp; 상품 보기 &nbsp;&nbsp; <i
+                    class="fa-solid fa-bag-shopping"></i></h3>
+
+        </div>
+    </main>
+</body>
+
+</html>

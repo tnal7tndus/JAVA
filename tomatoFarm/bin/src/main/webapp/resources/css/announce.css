@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* ======================================= */
+
+#annTopBox {
+    display: flex;
+    justify-content: space-between;
+    line-height: 80px;
+    font-size: 34px;
+    border-radius: 20px 20px;
+    margin-top: 30px;
+    margin-left: 20px;
+}
+
+/* ================================================= */
+
+#announceBoard {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+}
+
+#announceBoard>form {
+    position: absolute;
+    bottom: calc(100% + 15px);
+    right: 20px;
+
+}
+
+#announceBoard>form>input {
+    width: 220px;
+    height: 30px;
+    text-indent: 5px;
+}
+
+#announceBoard>form>button {
+    background-color: #ffffff00;
+    position: absolute;
+    right: 5px;
+    font-size: 20px;
+    color: #9B1B20;
+    cursor: pointer;
+}
+
+#announceBoard>div {
+    display: grid;
+    grid-template-columns: 1fr 6fr 1.5fr 2fr 1fr;
+    line-height: 60px;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.316);
+}
+
+#announceBoard>div:nth-of-type(1) {
+    background-color: #9B1B20;
+    color: white;
+    font-size: 22px;
+    border-radius: 20px 20px 0 0;
+}
+
+#announceBoard>div:nth-of-type(n+2):nth-of-type(-n+3) {
+    background-color: #9b1b1f0e;
+}
+
+#announceBoard>div:nth-of-type(n+2):nth-of-type(-n+3) div>img {
+    width: 40%;
+    line-height: 60px;
+    vertical-align: middle;
+}
+
+#announceBoard>div:not(:nth-of-type(1))>div:nth-of-type(2) {
+    text-align: left;
+    text-indent: 60px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: break-all;
+}
+
+.latestAnnounce {
+    font-size: 12px;
+    text-indent: 10px;
+    color: #9B1B20;
+}
+
+/* ================================== */
+.contentBox {
+    grid-column: span 5;
+    background-color: #00000008;
+    position: relative;
+    opacity: 1;
+    display: none;
+    order: 1;
+}
+
+.contentBox>div {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.contentBox>p {
+    width: 80%;
+    margin: auto;
+    text-align: left;
+    word-break: keep-all;
+    line-height: 24px;
+}
+
+.contentBox>a {
+    background-color: #9B1B20;
+    color: white;
+    border-radius: 7px;
+    padding: 5px;
+    margin: 10px 10px;
+}
+
+#NationContainer {
+    width: 399px;
+    margin: 0 auto;
+    height: 50px;
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(7, 57px);
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+#NationContainer>div {
+    line-height: 50px;
+}
+
+/* ====== Test ======== */
+
+#tomatoChess {
+    position: absolute;
+    width: 60px;
+    left: 70px;
+    top: 6px;
+}
